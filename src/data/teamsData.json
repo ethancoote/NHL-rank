@@ -3,7 +3,7 @@
         "teamName": "Colorado Avalanche",
         "teamAbbrev": "COL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg",
-        "elo": 1002
+        "elo": 1037
     },
     {
         "teamName": "Tampa Bay Lightning",
@@ -15,37 +15,37 @@
         "teamName": "Minnesota Wild",
         "teamAbbrev": "MIN",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg",
-        "elo": 1059
+        "elo": 1091
     },
     {
         "teamName": "Carolina Hurricanes",
         "teamAbbrev": "CAR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg",
-        "elo": 1125
+        "elo": 1075
     },
     {
         "teamName": "Dallas Stars",
         "teamAbbrev": "DAL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg",
-        "elo": 1013
+        "elo": 1053
     },
     {
         "teamName": "Detroit Red Wings",
         "teamAbbrev": "DET",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg?season=20252026",
-        "elo": 1030
+        "elo": 995
     },
     {
         "teamName": "Buffalo Sabres",
         "teamAbbrev": "BUF",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg",
-        "elo": 1185
+        "elo": 1143
     },
     {
         "teamName": "Montréal Canadiens",
         "teamAbbrev": "MTL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg",
-        "elo": 1078
+        "elo": 1120
     },
     {
         "teamName": "Boston Bruins",
@@ -57,43 +57,43 @@
         "teamName": "Pittsburgh Penguins",
         "teamAbbrev": "PIT",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg",
-        "elo": 1091
+        "elo": 1102
     },
     {
         "teamName": "New York Islanders",
         "teamAbbrev": "NYI",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg",
-        "elo": 1033
+        "elo": 996
     },
     {
         "teamName": "Vegas Golden Knights",
         "teamAbbrev": "VGK",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg",
-        "elo": 951
+        "elo": 925
     },
     {
         "teamName": "Edmonton Oilers",
         "teamAbbrev": "EDM",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg",
-        "elo": 1058
+        "elo": 1026
     },
     {
         "teamName": "Utah Mammoth",
         "teamAbbrev": "UTA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg?season=20252026",
-        "elo": 1096
+        "elo": 1056
     },
     {
         "teamName": "Florida Panthers",
         "teamAbbrev": "FLA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg",
-        "elo": 1016
+        "elo": 974
     },
     {
         "teamName": "Seattle Kraken",
         "teamAbbrev": "SEA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg",
-        "elo": 1019
+        "elo": 1045
     },
     {
         "teamName": "Anaheim Ducks",
@@ -105,55 +105,55 @@
         "teamName": "Washington Capitals",
         "teamAbbrev": "WSH",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg",
-        "elo": 902
+        "elo": 952
     },
     {
         "teamName": "San Jose Sharks",
         "teamAbbrev": "SJS",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg",
-        "elo": 1052
+        "elo": 1005
     },
     {
         "teamName": "New Jersey Devils",
         "teamAbbrev": "NJD",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg",
-        "elo": 976
+        "elo": 946
     },
     {
         "teamName": "Columbus Blue Jackets",
         "teamAbbrev": "CBJ",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg",
-        "elo": 1099
+        "elo": 1114
     },
     {
         "teamName": "Los Angeles Kings",
         "teamAbbrev": "LAK",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg",
-        "elo": 938
+        "elo": 966
     },
     {
         "teamName": "Ottawa Senators",
         "teamAbbrev": "OTT",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
-        "elo": 994
+        "elo": 1024
     },
     {
         "teamName": "Philadelphia Flyers",
         "teamAbbrev": "PHI",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg",
-        "elo": 894
+        "elo": 866
     },
     {
         "teamName": "Toronto Maple Leafs",
         "teamAbbrev": "TOR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
-        "elo": 902
+        "elo": 926
     },
     {
         "teamName": "Nashville Predators",
         "teamAbbrev": "NSH",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg",
-        "elo": 979
+        "elo": 1016
     },
     {
         "teamName": "Chicago Blackhawks",
@@ -165,30 +165,30 @@
         "teamName": "New York Rangers",
         "teamAbbrev": "NYR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg",
-        "elo": 827
+        "elo": 816
     },
     {
         "teamName": "Winnipeg Jets",
         "teamAbbrev": "WPG",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg",
-        "elo": 905
+        "elo": 947
     },
     {
         "teamName": "St. Louis Blues",
         "teamAbbrev": "STL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/STL_light.svg?season=20252026",
-        "elo": 896
+        "elo": 881
     },
     {
         "teamName": "Calgary Flames",
         "teamAbbrev": "CGY",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg",
-        "elo": 875
+        "elo": 922
     },
     {
         "teamName": "Vancouver Canucks",
         "teamAbbrev": "VAN",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg",
-        "elo": 818
+        "elo": 794
     }
 ]

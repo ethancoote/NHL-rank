@@ -1,8 +1,26 @@
-import { writeFileSync, readFileSync } from 'fs';
+import {writeFileSync} from 'fs';
 import { runEloAlgo } from './init.js';
 
-function getDayGameIds (date) {
+export async function getDayGameIds () {
+    try {
+        const date = getYesterdayString();
+        const response = await fetch (`https://api-web.nhle.com/v1/score/${date}`);
+        if (!response.ok) {
+            console.error(`getDayGameIds: ${response.status}`)
+            return null
+        }
+        const dayGames = await response.json();
+        let idArray = [];
+        for (let i = 0; i < dayGames.games.length; i++) {
+            const id = dayGames.games[i].id;
+            idArray.push(id);
+        }
+        writeFileSync("../src/data/dayGames.json", JSON.stringify(idArray));
 
+    } catch (err) {
+        console.error(`getDayGameIds: ${err}`);
+        return null;
+    }
 }
 
 export async function getGameScore (id) {
@@ -27,6 +45,18 @@ export async function getGameScore (id) {
     }
 }
 
-await runEloAlgo("gameIds-2025-2026.json");
+function getYesterdayString () {
+    const today = new Date();
+    const yesterday = new Date();
+    yesterday.setDate(today.getDate() -1);
+
+    const dateString = yesterday.toISOString().slice(0, 10);
+    return dateString;
+}
+
+// RUN THIS EVERY DAY
+//await getDayGameIds();
+//await runEloAlgo('dayGames.json');
+
 
 
