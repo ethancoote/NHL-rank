@@ -3,15 +3,16 @@
     justify-content: space-between;
     width: 100%;
     top: 32px;
-    padding: 0px 32px;
-    position: fixed;
+    padding: 32px;
+    margin-bottom: 12px;
     max-width: var(--max-width);
     z-index: 10;
 }
 
 @media only screen and (max-width:600px) {
     .header {
-        padding: 0px 12px;
+        padding: 12px;
+        margin-bottom: 32px;
         top:12px;
     }
 }
