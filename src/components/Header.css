@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 32px;
+    padding: 0px 32px;
+    position: fixed;
+    max-width: var(--max-width);
+    z-index: 10;
+}
+
+@media only screen and (max-width:600px) {
+    .header {
+        padding: 0px 12px;
+        top:12px;
+    }
+}
+
+.header__button {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+.header__logo-wrap {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+}
