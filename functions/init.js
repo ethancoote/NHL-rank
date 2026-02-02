@@ -2,7 +2,7 @@ import { writeFileSync, readFileSync } from 'fs';
 import updateElo from './elo.js';
 import {getGameScore} from './getData.js';
 
-export function getData () {
+export function initData () {
     fetch("https://api-web.nhle.com/v1/standings/now")
         .then(response => response.json())
         .then((response) => {
@@ -63,7 +63,7 @@ export async function runEloAlgo (filename) {
             break;
         }
         teamsData = teamsDataTemp;
-        console.log(`Game: ${i}/${gameIdArray.length}`);
+        console.log(`Game: ${i+1}/${gameIdArray.length}`);
         await sleep(1000);
     }
 

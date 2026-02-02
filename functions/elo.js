@@ -7,6 +7,7 @@ export default function updateElo (gameScore, teamsData) {
     const awayTeam = gameScore.awayTeam;
     const homeScore = gameScore.homeScore;
     const awayScore = gameScore.awayScore;
+    const ot = gameScore.ot;
 
     const homeTeamIndex = teamsData.findIndex(team => team.teamAbbrev === homeTeam);
     const awayTeamIndex = teamsData.findIndex(team => team.teamAbbrev === awayTeam);
@@ -21,12 +22,12 @@ export default function updateElo (gameScore, teamsData) {
     };
 
     if (homeScore > awayScore) {
-        newElo = eloFormula(homeTeamElo, awayTeamElo);
+        newElo = eloFormula(homeTeamElo, awayTeamElo, ot);
         teamsData[homeTeamIndex].elo = newElo.winnerElo;
         teamsData[awayTeamIndex].elo = newElo.loserElo;
 
     } else if (homeScore < awayScore) {
-        newElo = eloFormula(awayTeamElo,homeTeamElo);
+        newElo = eloFormula(awayTeamElo,homeTeamElo, ot);
         teamsData[awayTeamIndex].elo = newElo.winnerElo;
         teamsData[homeTeamIndex].elo = newElo.loserElo;
     } else {
@@ -34,19 +35,28 @@ export default function updateElo (gameScore, teamsData) {
         return null;
     }
 
+    console.log(`${teamsData[homeTeamIndex].teamAbbrev}: ${teamsData[homeTeamIndex].elo} vs ${teamsData[awayTeamIndex].teamAbbrev}: ${teamsData[awayTeamIndex].elo}`);
+
     return teamsData
 
 };
 
-function eloFormula (winnerElo, loserElo) {
+function eloFormula (winnerElo, loserElo, ot) {
 
     //magic number elo formula
     const winnerExpected = 1 / (1 + 10**((loserElo - winnerElo)/400));
     const loserExpected = 1 / (1 + 10**((winnerElo - loserElo)/400));
 
+    // to keep the game 0 sum, you earn 75% of points for an OT win, and 25% for an OT loss.
+    let winnerPoints = 1;
+    let loserPoints = 0;
+    if (ot) {
+        winnerPoints = 0.75;
+        loserPoints = 0.25;
+    }
     const k = 64;
-    const winnerNewElo = Math.round(winnerElo + k * (1 - winnerExpected));
-    const loserNewElo = Math.round(loserElo + k * (0 - loserExpected));
+    const winnerNewElo = Math.round(winnerElo + k * (winnerPoints - winnerExpected));
+    const loserNewElo = Math.round(loserElo + k * (loserPoints - loserExpected));
 
     const newElo = {
         winnerElo: winnerNewElo,

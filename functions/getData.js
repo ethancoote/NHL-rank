@@ -1,4 +1,4 @@
-import {writeFileSync} from 'fs';
+import {readFileSync, writeFileSync} from 'fs';
 import { runEloAlgo } from './init.js';
 
 export async function getDayGameIds () {
@@ -31,16 +31,43 @@ export async function getGameScore (id) {
             return null;
         }
         let gameData = await response.json();
-
         const gameScore = {
             homeTeam: gameData.homeTeam.abbrev,
             homeScore: gameData.homeTeam.score,
             awayTeam: gameData.awayTeam.abbrev,
-            awayScore: gameData.awayTeam.score
+            awayScore: gameData.awayTeam.score,
+            ot: gameData.otInUse
         }
         return gameScore;
     } catch (err) {
         console.error(err);
+        return null;
+    }
+}
+
+export async function getTeamsData () {
+    try {
+        const currentTeamsData = JSON.parse(readFileSync("../src/data/teamsData.json"));
+        const response = await fetch(`https://api-web.nhle.com/v1/standings/now`);
+        if (!response.ok) {
+            console.error(`getMiscData cannot fetch: ${response.status}`);
+            return null;
+        }
+        let teamsData = await response.json();
+        teamsData = teamsData.standings;
+        for (let i = 0; i < teamsData.length; i++) {
+            const newTeamData = teamsData[i];
+            const currentTeamIndex = currentTeamsData.findIndex(team => team.teamAbbrev === newTeamData.teamAbbrev.default);
+            currentTeamsData[currentTeamIndex].gamesPlayed = newTeamData.gamesPlayed;
+            currentTeamsData[currentTeamIndex].division = newTeamData.divisionAbbrev;
+            currentTeamsData[currentTeamIndex].rank = i+1;
+            currentTeamsData[currentTeamIndex].wins = newTeamData.wins;
+            currentTeamsData[currentTeamIndex].losses = newTeamData.losses;
+            currentTeamsData[currentTeamIndex].otLosses = newTeamData.otLosses;
+        }
+        writeFileSync("../src/data/teamsData.json", JSON.stringify(currentTeamsData));
+    } catch (err) {
+        console.error(`getMiscData: ${err}`);
         return null;
     }
 }
@@ -54,9 +81,12 @@ function getYesterdayString () {
     return dateString;
 }
 
+
+
 // RUN THIS EVERY DAY
 //await getDayGameIds();
 //await runEloAlgo('dayGames.json');
+//await getTeamsData ();
 
 
 

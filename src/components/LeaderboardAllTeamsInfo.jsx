@@ -4,7 +4,7 @@ import data from '../data/teamsData.json';
 import './LeaderboardAllTeamsInfo.css';
 
 export default function LeaderboardAllTeamsInfo () {
-    const teamsData = data;
+    const teamsData = eloSort(data);
 
     const teamInfoComponents = teamsData.map((team) => {
         return (
@@ -34,4 +34,9 @@ export default function LeaderboardAllTeamsInfo () {
         </table>
         
     );
+}
+
+function eloSort (data) {
+    data = data.sort((a, b) => b.elo - a.elo);
+    return data;
 }
