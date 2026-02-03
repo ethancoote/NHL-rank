@@ -47,6 +47,15 @@
   flex-direction: column;
   width: 100%;
   gap: 24px;
+  align-items: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 16px;
 }
 
 

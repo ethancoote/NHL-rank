@@ -2,6 +2,13 @@
   --max-width: 1400px;
   --border-radius: 8px;
   --box-shadow: 0px 5px 16px hsla(0, 0%, 0%, .05);
+  font-size: 10px;
+}
+
+@media only screen and (max-width:600px) {
+  :root {
+    font-size: 8px;
+  }
 }
 
 body {
@@ -12,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: hsla(0, 0%, 0%, 0.05);
+  font-size: 16px;
 }
 
 code {
@@ -21,4 +29,24 @@ code {
 
 p {
   font-size: 16px;
+  line-height: 25px;
+  
+  &.shrink {
+    width: 0;
+    min-width: 100%;
+  }
+
+  &.balance {
+    text-wrap: balance;
+  }
+}
+
+h1 {
+  font-size: 5.2rem;
+  line-height: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+  line-height: 5rem;
 }

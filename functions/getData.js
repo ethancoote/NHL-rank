@@ -81,11 +81,9 @@ function getYesterdayString () {
     return dateString;
 }
 
-
-
 // RUN THIS EVERY DAY
-//await getDayGameIds();
-//await runEloAlgo('dayGames.json');
+await getDayGameIds();
+await runEloAlgo('dayGames.json');
 //await getTeamsData ();
 
 

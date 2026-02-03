@@ -3,192 +3,384 @@
         "teamName": "Colorado Avalanche",
         "teamAbbrev": "COL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg",
-        "elo": 1011
+        "elo": 1011,
+        "gamesPlayed": 53,
+        "division": "C",
+        "rank": 1,
+        "wins": 36,
+        "losses": 8,
+        "otLosses": 9
     },
     {
         "teamName": "Tampa Bay Lightning",
         "teamAbbrev": "TBL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg",
-        "elo": 1104
+        "elo": 1104,
+        "gamesPlayed": 53,
+        "division": "A",
+        "rank": 2,
+        "wins": 35,
+        "losses": 14,
+        "otLosses": 4
     },
     {
         "teamName": "Minnesota Wild",
         "teamAbbrev": "MIN",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg",
-        "elo": 1044
+        "elo": 1044,
+        "gamesPlayed": 56,
+        "division": "C",
+        "rank": 4,
+        "wins": 32,
+        "losses": 14,
+        "otLosses": 10
     },
     {
         "teamName": "Carolina Hurricanes",
         "teamAbbrev": "CAR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg",
-        "elo": 1034
+        "elo": 1034,
+        "gamesPlayed": 55,
+        "division": "M",
+        "rank": 3,
+        "wins": 34,
+        "losses": 15,
+        "otLosses": 6
     },
     {
         "teamName": "Dallas Stars",
         "teamAbbrev": "DAL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg",
-        "elo": 1026
+        "elo": 1026,
+        "gamesPlayed": 55,
+        "division": "C",
+        "rank": 5,
+        "wins": 32,
+        "losses": 14,
+        "otLosses": 9
     },
     {
         "teamName": "Detroit Red Wings",
         "teamAbbrev": "DET",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg?season=20252026",
-        "elo": 993
+        "elo": 993,
+        "gamesPlayed": 56,
+        "division": "A",
+        "rank": 6,
+        "wins": 32,
+        "losses": 18,
+        "otLosses": 6
     },
     {
         "teamName": "Buffalo Sabres",
         "teamAbbrev": "BUF",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg",
-        "elo": 1067
+        "elo": 1067,
+        "gamesPlayed": 54,
+        "division": "A",
+        "rank": 10,
+        "wins": 31,
+        "losses": 18,
+        "otLosses": 5
     },
     {
         "teamName": "Montréal Canadiens",
         "teamAbbrev": "MTL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg",
-        "elo": 1058
+        "elo": 1058,
+        "gamesPlayed": 55,
+        "division": "A",
+        "rank": 7,
+        "wins": 31,
+        "losses": 17,
+        "otLosses": 7
     },
     {
         "teamName": "Boston Bruins",
         "teamAbbrev": "BOS",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg?season=20252026",
-        "elo": 1060
+        "elo": 1060,
+        "gamesPlayed": 56,
+        "division": "A",
+        "rank": 8,
+        "wins": 32,
+        "losses": 20,
+        "otLosses": 4
     },
     {
         "teamName": "Pittsburgh Penguins",
         "teamAbbrev": "PIT",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg",
-        "elo": 1050
+        "elo": 1050,
+        "gamesPlayed": 53,
+        "division": "M",
+        "rank": 9,
+        "wins": 28,
+        "losses": 14,
+        "otLosses": 11
     },
     {
         "teamName": "New York Islanders",
         "teamAbbrev": "NYI",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg",
-        "elo": 998
+        "elo": 998,
+        "gamesPlayed": 55,
+        "division": "M",
+        "rank": 11,
+        "wins": 30,
+        "losses": 20,
+        "otLosses": 5
     },
     {
         "teamName": "Vegas Golden Knights",
         "teamAbbrev": "VGK",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg",
-        "elo": 962
+        "elo": 962,
+        "gamesPlayed": 54,
+        "division": "P",
+        "rank": 12,
+        "wins": 25,
+        "losses": 15,
+        "otLosses": 14
     },
     {
         "teamName": "Edmonton Oilers",
         "teamAbbrev": "EDM",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg",
-        "elo": 1013
+        "elo": 1013,
+        "gamesPlayed": 56,
+        "division": "P",
+        "rank": 13,
+        "wins": 28,
+        "losses": 20,
+        "otLosses": 8
     },
     {
         "teamName": "Utah Mammoth",
         "teamAbbrev": "UTA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg?season=20252026",
-        "elo": 1027
+        "elo": 1027,
+        "gamesPlayed": 55,
+        "division": "C",
+        "rank": 18,
+        "wins": 28,
+        "losses": 23,
+        "otLosses": 4
     },
     {
         "teamName": "Florida Panthers",
         "teamAbbrev": "FLA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg",
-        "elo": 987
+        "elo": 987,
+        "gamesPlayed": 54,
+        "division": "A",
+        "rank": 19,
+        "wins": 28,
+        "losses": 23,
+        "otLosses": 3
     },
     {
         "teamName": "Seattle Kraken",
         "teamAbbrev": "SEA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg",
-        "elo": 1024
+        "elo": 1024,
+        "gamesPlayed": 54,
+        "division": "P",
+        "rank": 14,
+        "wins": 26,
+        "losses": 19,
+        "otLosses": 9
     },
     {
         "teamName": "Anaheim Ducks",
         "teamAbbrev": "ANA",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg",
-        "elo": 981
+        "elo": 981,
+        "gamesPlayed": 54,
+        "division": "P",
+        "rank": 21,
+        "wins": 28,
+        "losses": 23,
+        "otLosses": 3
     },
     {
         "teamName": "Washington Capitals",
         "teamAbbrev": "WSH",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg",
-        "elo": 978
+        "elo": 978,
+        "gamesPlayed": 56,
+        "division": "M",
+        "rank": 16,
+        "wins": 27,
+        "losses": 22,
+        "otLosses": 7
     },
     {
         "teamName": "San Jose Sharks",
         "teamAbbrev": "SJS",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg",
-        "elo": 999
+        "elo": 999,
+        "gamesPlayed": 53,
+        "division": "P",
+        "rank": 23,
+        "wins": 27,
+        "losses": 22,
+        "otLosses": 4
     },
     {
         "teamName": "New Jersey Devils",
         "teamAbbrev": "NJD",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg",
-        "elo": 974
+        "elo": 974,
+        "gamesPlayed": 55,
+        "division": "M",
+        "rank": 25,
+        "wins": 28,
+        "losses": 25,
+        "otLosses": 2
     },
     {
         "teamName": "Columbus Blue Jackets",
         "teamAbbrev": "CBJ",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg",
-        "elo": 1057
+        "elo": 1057,
+        "gamesPlayed": 54,
+        "division": "M",
+        "rank": 15,
+        "wins": 27,
+        "losses": 20,
+        "otLosses": 7
     },
     {
         "teamName": "Los Angeles Kings",
         "teamAbbrev": "LAK",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg",
-        "elo": 985
+        "elo": 985,
+        "gamesPlayed": 54,
+        "division": "P",
+        "rank": 17,
+        "wins": 23,
+        "losses": 17,
+        "otLosses": 14
     },
     {
         "teamName": "Ottawa Senators",
         "teamAbbrev": "OTT",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
-        "elo": 1013
+        "elo": 1013,
+        "gamesPlayed": 54,
+        "division": "A",
+        "rank": 20,
+        "wins": 26,
+        "losses": 21,
+        "otLosses": 7
     },
     {
         "teamName": "Philadelphia Flyers",
         "teamAbbrev": "PHI",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg",
-        "elo": 935
+        "elo": 935,
+        "gamesPlayed": 54,
+        "division": "M",
+        "rank": 24,
+        "wins": 24,
+        "losses": 20,
+        "otLosses": 10
     },
     {
         "teamName": "Toronto Maple Leafs",
         "teamAbbrev": "TOR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
-        "elo": 964
+        "elo": 964,
+        "gamesPlayed": 55,
+        "division": "A",
+        "rank": 22,
+        "wins": 25,
+        "losses": 21,
+        "otLosses": 9
     },
     {
         "teamName": "Nashville Predators",
         "teamAbbrev": "NSH",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg",
-        "elo": 1007
+        "elo": 1007,
+        "gamesPlayed": 54,
+        "division": "C",
+        "rank": 26,
+        "wins": 25,
+        "losses": 23,
+        "otLosses": 6
     },
     {
         "teamName": "Chicago Blackhawks",
         "teamAbbrev": "CHI",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg?season=20252026",
-        "elo": 946
+        "elo": 946,
+        "gamesPlayed": 55,
+        "division": "C",
+        "rank": 28,
+        "wins": 21,
+        "losses": 25,
+        "otLosses": 9
     },
     {
         "teamName": "New York Rangers",
         "teamAbbrev": "NYR",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg",
-        "elo": 912
+        "elo": 912,
+        "gamesPlayed": 56,
+        "division": "M",
+        "rank": 30,
+        "wins": 22,
+        "losses": 28,
+        "otLosses": 6
     },
     {
         "teamName": "Winnipeg Jets",
         "teamAbbrev": "WPG",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg",
-        "elo": 979
+        "elo": 979,
+        "gamesPlayed": 54,
+        "division": "C",
+        "rank": 27,
+        "wins": 22,
+        "losses": 25,
+        "otLosses": 7
     },
     {
         "teamName": "St. Louis Blues",
         "teamAbbrev": "STL",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/STL_light.svg?season=20252026",
-        "elo": 945
+        "elo": 945,
+        "gamesPlayed": 55,
+        "division": "C",
+        "rank": 31,
+        "wins": 20,
+        "losses": 26,
+        "otLosses": 9
     },
     {
         "teamName": "Calgary Flames",
         "teamAbbrev": "CGY",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg",
-        "elo": 963
+        "elo": 963,
+        "gamesPlayed": 54,
+        "division": "P",
+        "rank": 29,
+        "wins": 22,
+        "losses": 26,
+        "otLosses": 6
     },
     {
         "teamName": "Vancouver Canucks",
         "teamAbbrev": "VAN",
         "teamLogo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg",
-        "elo": 904
+        "elo": 904,
+        "gamesPlayed": 55,
+        "division": "P",
+        "rank": 32,
+        "wins": 18,
+        "losses": 31,
+        "otLosses": 6
     }
 ]

@@ -1,7 +1,7 @@
 .leaderboard__team-line {
     display: flex;
     padding: 0px 0px;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     width: 100%;
     border-bottom: 1px solid hsla(0, 0%, 0%, .1);

@@ -8,7 +8,8 @@ function App() {
       <Header />
       <section className="section">
         <div className="box">
-          <h1 className="text-center">Title goes here.</h1>
+          <h1 className="text-center">NHL Rank</h1>
+          <p className="subtitle">The Unofficial NHL Elo Rating Leaderboard</p>
           <Leaderboard />
         </div>
       </section>
