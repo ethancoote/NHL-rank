@@ -72,6 +72,32 @@ export async function getTeamsData () {
     }
 }
 
+export async function getTodaysGames() {
+    try {
+        const response = await fetch("https://api-web.nhle.com/v1/schedule/now");
+        if (!response.ok) {
+            console.error(`getTodaysGames() fetch error: ${response.status}`);
+        }
+
+        const schedule = await response.json();
+        const todaysGames = schedule.gameWeek[0].games;
+        let allGames = [];
+
+        for (let i = 0; i < todaysGames.length; i++) {
+            const game = {
+                homeTeam: todaysGames[i].homeTeam.abbrev,
+                awayTeam: todaysGames[i].awayTeam.abbrev,
+                timeUTC: todaysGames[i].startTimeUTC.slice(11, 16)
+            }
+            allGames.push(game);
+        }
+
+        writeFileSync("../src/data/todaysGames.json", JSON.stringify(allGames));
+    } catch (err) {
+        console.error(`getTodaysGames(): ${err}`);
+    }
+}
+
 function getYesterdayString () {
     const today = new Date();
     const yesterday = new Date();
@@ -82,9 +108,6 @@ function getYesterdayString () {
 }
 
 // RUN THIS EVERY DAY
-await getDayGameIds();
-await runEloAlgo('dayGames.json');
-//await getTeamsData ();
-
-
-
+//await getDayGameIds();
+//await runEloAlgo('dayGames.json');
+//await getTodaysGames();

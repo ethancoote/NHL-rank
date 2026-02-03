@@ -1,0 +1,37 @@
+[
+    {
+        "homeTeam": "NJD",
+        "awayTeam": "CBJ",
+        "timeUTC": "00:00"
+    },
+    {
+        "homeTeam": "PHI",
+        "awayTeam": "WSH",
+        "timeUTC": "00:00"
+    },
+    {
+        "homeTeam": "CAR",
+        "awayTeam": "OTT",
+        "timeUTC": "00:00"
+    },
+    {
+        "homeTeam": "TBL",
+        "awayTeam": "BUF",
+        "timeUTC": "00:30"
+    },
+    {
+        "homeTeam": "NYI",
+        "awayTeam": "PIT",
+        "timeUTC": "00:30"
+    },
+    {
+        "homeTeam": "EDM",
+        "awayTeam": "TOR",
+        "timeUTC": "01:30"
+    },
+    {
+        "homeTeam": "ANA",
+        "awayTeam": "SEA",
+        "timeUTC": "03:00"
+    }
+]

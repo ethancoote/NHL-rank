@@ -10,6 +10,12 @@
     margin-top: 16px;
 }
 
+.leaderboard__sticky-head {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
 .leaderboard__table-logo {
     width: 200px;
     text-align: center;

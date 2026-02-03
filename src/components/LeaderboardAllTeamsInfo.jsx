@@ -26,7 +26,7 @@ export default function LeaderboardAllTeamsInfo () {
 
     return (
         <table>
-            <thead >
+            <thead className="leaderboard__sticky-head">
                 <tr className="leaderboard__table-head">
                     <th className="leaderboard__table-logo">Team</th>
                     <th className="leaderboard__table-box leaderboard__gp">GP</th>
