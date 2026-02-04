@@ -20,6 +20,7 @@ export default function AllGames () {
             />
         );
     });
+
     return (
         <>
         {allGamesComponent}

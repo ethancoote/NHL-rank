@@ -81,7 +81,11 @@ export async function getTodaysGames() {
         }
 
         const schedule = await response.json();
-        const todaysGames = schedule.gameWeek[0].games;
+        const todaysGames = schedule.gameWeek[0]?.games;
+        if (!todaysGames) {
+            writeFileSync("../src/data/todaysGames.json", JSON.stringify([]));
+            return [];
+        }
 
         const teamData = JSON.parse(readFileSync("../src/data/teamsData.json"));
         let allGames = [];
@@ -124,6 +128,6 @@ function getYesterdayString () {
 }
 
 // RUN THIS EVERY DAY
-await getDayGameIds();
-await runEloAlgo('dayGames.json');
+//await getDayGameIds();
+//await runEloAlgo('dayGames.json');
 await getTodaysGames();
