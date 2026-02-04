@@ -18,17 +18,33 @@
 }
 
 .header__button {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    background-color: white;
-    padding: 12px 24px;
-    text-decoration: none;
+
+    img {
+        width: 42px;
+        aspect-ratio: 1;
+        transition: 0.3s;
+    }
+
+    :hover {
+        filter: brightness(400%);
+    }
 }
 
+
 .header__logo-wrap {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    background-color: white;
-    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
     text-decoration: none;
+
+    img {
+        width: 64px;
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+}
+
+.header__title {
+    font-size: 2.8rem;
+    font-weight: 700;
 }

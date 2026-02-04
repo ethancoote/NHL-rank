@@ -124,6 +124,6 @@ function getYesterdayString () {
 }
 
 // RUN THIS EVERY DAY
-//await getDayGameIds();
-//await runEloAlgo('dayGames.json');
-//await getTodaysGames();
+await getDayGameIds();
+await runEloAlgo('dayGames.json');
+await getTodaysGames();

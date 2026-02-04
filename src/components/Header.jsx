@@ -4,10 +4,11 @@ export default function Header () {
     return(
         <div className="header">
             <div className="header__logo-wrap">
-                <p>App Title</p>
+                <img src="./assets/images/nhl-logo.webp" alt="nhl logo"/>
+                <p className="header__title">NHL RANK</p>
             </div>
-            <a href="/" className="header__button">
-                <p>Placeholder CTA</p>
+            <a href="https://github.com/ethancoote/NHL-rank" className="header__button" target="_blank" rel="noreferrer">
+                <img src="./assets/images/github-logo.svg" alt="github logo"/>
             </a>
         </div>
     );

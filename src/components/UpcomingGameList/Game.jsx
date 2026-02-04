@@ -4,7 +4,6 @@ export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, 
     return (
         <div className="game-list__game">
             <div className="game-list__team">
-                <p>{homeTeam}</p>
                 <img src={homeLogo} alt="home team logo" />
                 <p><b>{homeElo}</b></p>
                 <p>({homeWinProb}%)</p>
@@ -14,7 +13,6 @@ export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, 
                 <p>{timeUTC} UTC</p>
             </div>
             <div className="game-list__team">
-                <p>{awayTeam}</p>
                 <img src={awayLogo} alt="away team logo" />
                 <p><b>{awayElo}</b></p>
                 <p>({awayWinProb}%)</p>

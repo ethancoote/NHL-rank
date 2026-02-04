@@ -8,10 +8,7 @@ function App() {
     <div className="app">
       <Header />
       <section className="section">
-        <div className="box">
-          <h1 className="text-center">NHL Rank</h1>
-          <p className="subtitle">The Unofficial NHL Elo Rating Leaderboard</p>
-        </div>
+
         <div className="box across start">
           <Leaderboard />
           <UpcomingGameList />
