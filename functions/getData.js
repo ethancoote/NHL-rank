@@ -1,5 +1,6 @@
-import {readFileSync, writeFileSync} from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { runEloAlgo } from './init.js';
+import { getWinProb } from './elo.js';
 
 export async function getDayGameIds () {
     try {
@@ -81,18 +82,33 @@ export async function getTodaysGames() {
 
         const schedule = await response.json();
         const todaysGames = schedule.gameWeek[0].games;
-        let allGames = [];
 
+        const teamData = JSON.parse(readFileSync("../src/data/teamsData.json"));
+        let allGames = [];
+        
         for (let i = 0; i < todaysGames.length; i++) {
+            const homeIndex = teamData.findIndex(team => team.teamAbbrev === todaysGames[i].homeTeam.abbrev);
+            const awayIndex = teamData.findIndex(team => team.teamAbbrev === todaysGames[i].awayTeam.abbrev);
+
+            const winProb = getWinProb(teamData[homeIndex].elo, teamData[awayIndex].elo);
+
             const game = {
                 homeTeam: todaysGames[i].homeTeam.abbrev,
                 awayTeam: todaysGames[i].awayTeam.abbrev,
-                timeUTC: todaysGames[i].startTimeUTC.slice(11, 16)
+                timeUTC: todaysGames[i].startTimeUTC.slice(11, 16),
+                homeLogo: todaysGames[i].homeTeam.logo,
+                awayLogo: todaysGames[i].awayTeam.logo,
+                homeWinProb: Math.round(winProb.homeWinProb * 10000) / 100,
+                awayWinProb: Math.round(winProb.awayWinProb * 10000) / 100,
+                homeElo: teamData[homeIndex].elo,
+                awayElo: teamData[awayIndex].elo
             }
+
             allGames.push(game);
         }
 
         writeFileSync("../src/data/todaysGames.json", JSON.stringify(allGames));
+
     } catch (err) {
         console.error(`getTodaysGames(): ${err}`);
     }

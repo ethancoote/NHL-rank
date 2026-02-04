@@ -10,6 +10,12 @@ export default function AllGames () {
                 homeTeam={game.homeTeam} 
                 awayTeam={game.awayTeam}
                 timeUTC={game.timeUTC}
+                homeLogo={game.homeLogo}
+                awayLogo={game.awayLogo}
+                homeElo={game.homeElo}
+                awayElo={game.awayElo}
+                homeWinProb={game.homeWinProb}
+                awayWinProb={game.awayWinProb}
                 key={crypto.randomUUID()}
             />
         );

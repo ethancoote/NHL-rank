@@ -41,6 +41,13 @@ export default function updateElo (gameScore, teamsData) {
 
 };
 
+export function getWinProb (homeElo, awayElo) {
+    const homeExpected = 1 / (1 + 10**((awayElo - homeElo)/400));
+    const awayExpected = 1 / (1 + 10**((homeElo - awayElo)/400));
+
+    return {homeWinProb: homeExpected, awayWinProb: awayExpected}
+}
+
 function eloFormula (winnerElo, loserElo, ot) {
 
     //magic number elo formula
