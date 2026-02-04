@@ -1,0 +1,10 @@
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: white;
+    padding: 32px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}

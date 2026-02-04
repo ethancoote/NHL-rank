@@ -1,6 +1,6 @@
 import LeaderboardTeamInfo from './LeaderboardTeamInfo.jsx';
 //import {useState} from 'react';
-import data from '../data/teamsData.json';
+import data from '../../data/teamsData.json';
 import './LeaderboardAllTeamsInfo.css';
 
 export default function LeaderboardAllTeamsInfo () {
