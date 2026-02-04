@@ -41,6 +41,13 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .leaderboard__table-box {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .leaderboard__division {
         display: none;

@@ -19,6 +19,7 @@
 
 .header__button {
     height: fit-content;
+    align-self: center;
     img {
         width: 42px;
         aspect-ratio: 1;
@@ -41,6 +42,12 @@
         width: 64px;
         aspect-ratio: 1;
         object-fit: contain;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .header__logo-wrap {
+        gap: 16px;
     }
 }
 

@@ -16,9 +16,12 @@
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
     .leaderboard {
         width: 100%;
+        &.hide {
+            display: none;
+        }
     }
 }
 

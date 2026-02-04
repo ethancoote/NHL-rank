@@ -6,6 +6,7 @@ import './LeaderboardAllTeamsInfo.css';
 export default function LeaderboardAllTeamsInfo () {
     const teamsData = eloSort(data);
     let rankIndex = 0;
+
     const teamInfoComponents = teamsData.map((team) => {
         rankIndex += 1;
         return (

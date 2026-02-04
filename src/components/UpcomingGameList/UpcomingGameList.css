@@ -8,3 +8,17 @@
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
+
+@media only screen and (max-width: 600px) {
+    .game-list {
+        padding: 32px 16px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .game-list {
+        &.hide {
+            display: none;
+        }
+    }
+}
