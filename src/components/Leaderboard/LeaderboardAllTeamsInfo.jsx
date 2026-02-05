@@ -20,6 +20,7 @@ export default function LeaderboardAllTeamsInfo () {
                 wins={team.wins}
                 losses={team.losses}
                 otLosses={team.otLosses}
+                oldElo={team.oldElo}
                 key={crypto.randomUUID()}
             />
         );
@@ -35,7 +36,8 @@ export default function LeaderboardAllTeamsInfo () {
                     <th className="leaderboard__table-box">L</th>
                     <th className="leaderboard__table-box">OTL</th>
                     <th className="leaderboard__table-box leaderboard__division">Division</th>
-                    <th className="leaderboard__table-box">Elo</th>
+                    <th className="leaderboard__table-box leaderboard__elo">Elo</th>
+                    <th className="leaderboard__table-box leaderboard__diff"></th>
                 </tr>
                 
             </thead>

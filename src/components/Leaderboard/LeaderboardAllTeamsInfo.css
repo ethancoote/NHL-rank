@@ -34,18 +34,44 @@
 
 .leaderboard__table-box {
     display: flex;
-    width: 96px;
+    width: 90px;
     height: stretch;
     text-align:start;
     align-items: center;
     justify-content: center;
+
+    &.leaderboard__diff {
+        width: 24px;
+    }
+
+    &.leaderboard__elo {
+        width: 80px;
+    }
+
+    &.red {
+        color: rgb(209, 30, 30);
+    }
+    &.green {
+        color: rgb(21, 172, 34);
+    }
 }
+
+
 
 @media only screen and (max-width: 1200px) {
 
     .leaderboard__table-box {
         width: 100%;
+        
+        &.leaderboard__diff {
+            width: 40%;
+        }
+
+        &.leaderboard__elo {
+            width: 100%;
+        }
     }
+    
 }
 
 @media only screen and (max-width: 900px) {
@@ -64,11 +90,17 @@
 
 @media only screen and (max-width: 600px) {
     .leaderboard__table-logo {
-        width: 84px;
-        gap: 8px;
+        width: 78px;
+        gap: 0px;
     }
 
     .leaderboard__team {
         display: none;
+    }
+
+    .leaderboard__table-box {
+        &.leaderboard__diff {
+            width: 70%;
+        }
     }
 }
