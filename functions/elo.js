@@ -23,11 +23,15 @@ export default function updateElo (gameScore, teamsData) {
 
     if (homeScore > awayScore) {
         newElo = eloFormula(homeTeamElo, awayTeamElo, ot);
+        teamsData[homeTeamIndex].oldElo = teamsData[homeTeamIndex].elo;
+        teamsData[awayTeamIndex].oldElo = teamsData[awayTeamIndex].elo;
         teamsData[homeTeamIndex].elo = newElo.winnerElo;
         teamsData[awayTeamIndex].elo = newElo.loserElo;
 
     } else if (homeScore < awayScore) {
         newElo = eloFormula(awayTeamElo,homeTeamElo, ot);
+        teamsData[homeTeamIndex].oldElo = teamsData[homeTeamIndex].elo;
+        teamsData[awayTeamIndex].oldElo = teamsData[awayTeamIndex].elo;
         teamsData[awayTeamIndex].elo = newElo.winnerElo;
         teamsData[homeTeamIndex].elo = newElo.loserElo;
     } else {

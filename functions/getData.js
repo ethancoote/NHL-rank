@@ -59,6 +59,7 @@ export async function getTeamsData () {
         for (let i = 0; i < teamsData.length; i++) {
             const newTeamData = teamsData[i];
             const currentTeamIndex = currentTeamsData.findIndex(team => team.teamAbbrev === newTeamData.teamAbbrev.default);
+
             currentTeamsData[currentTeamIndex].gamesPlayed = newTeamData.gamesPlayed;
             currentTeamsData[currentTeamIndex].division = newTeamData.divisionAbbrev;
             currentTeamsData[currentTeamIndex].rank = i+1;
@@ -130,4 +131,5 @@ function getYesterdayString () {
 // RUN THIS EVERY DAY
 await getDayGameIds();
 await runEloAlgo('dayGames.json');
+await getTeamsData();
 await getTodaysGames();
