@@ -18,11 +18,16 @@
   display:flex;
   flex-direction: column;
   align-items: start;
+  align-self: center;
   width: 100%;
   max-width: var(--max-width);
   padding: 32px;
   gap: 16px;
   justify-content: start;
+
+  &.across {
+    flex-direction: row;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -47,6 +52,9 @@
     align-items: start;
   }
 
+  &.start {
+    align-items: start;
+  }
 }
 
 @media only screen and (max-width: 1200px) {

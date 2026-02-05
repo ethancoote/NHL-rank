@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import Leaderboard from './components/Leaderboard/Leaderboard.jsx';
 import UpcomingGameList from './components/UpcomingGameList/UpcomingGameList.jsx';
 
@@ -17,6 +18,7 @@ function App() {
     }
   }
   return (
+    <>
     <div className="app">
       <Header />
       <section className="section">
@@ -32,6 +34,8 @@ function App() {
       </section>
       
     </div>
+    <Footer />
+    </>
   );
 }
 
