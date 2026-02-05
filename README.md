@@ -22,7 +22,6 @@ The elo algorithm first determines the expected probability of each team winning
 
 ```
 homeWinProbability = 1 / (1 + 10**( (awayTeamElo - homeTeamElo) / 400) )
-
 awayWinProbability = 1 / (1 + 10**( (homeTeamElo - awayTeamElo) / 400) )
 ```
 
@@ -46,7 +45,6 @@ If the home team were to win, the final algorithm would look like this:
 
 ```
 homeNewElo = homeElo + k * (winPoints - homeWinProbability)
-
 awayNewElo = homeElo + k * (losePoints - awayWinProbability)
 ```
 
@@ -69,10 +67,7 @@ These functions will run every 24 hours.
 
 ```
 getDayGameIds() // Gets game ids from yesterday’s games.
-
 runEloAlgo(‘dayGames.json’) // Runs the elo algorithm on yesterday’s games.
-
 getTeamsData() // Gets updated teams data.
-
 getTodaysGames() // Gets the upcoming games for the next day.
 ```
