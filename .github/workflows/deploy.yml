@@ -16,6 +16,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Upload Static Files as Artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/
   
   deploy:
     needs: build
