@@ -2,6 +2,8 @@
 
 This app had no association with the NHL.
 
+https://ethancoote.github.io/NHL-rank/
+
 ## Table of Contents
 
 [Overview](#overview)<br>
