@@ -130,5 +130,3 @@ function getYesterdayString () {
 export function githubTest () {
     console.log("SUCCESS!");
 }
-
-githubTest();

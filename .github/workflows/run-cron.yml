@@ -1,9 +1,8 @@
 name: Run Cron
 
 on: 
-  push: 
-    branches:
-      - master
+  schedule:
+    - cron: '0 10 * * *'
 
 jobs:
   update:
@@ -13,5 +12,5 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Run Update Function
-        run: node functions/getData.js
+        run: node functions/cron.js
         
