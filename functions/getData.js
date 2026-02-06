@@ -1,5 +1,4 @@
 import { readFileSync, writeFileSync } from 'fs';
-import { runEloAlgo } from './init.js';
 import { getWinProb } from './elo.js';
 
 export async function getDayGameIds () {
@@ -127,9 +126,3 @@ function getYesterdayString () {
     const dateString = yesterday.toISOString().slice(0, 10);
     return dateString;
 }
-
-// RUN THIS EVERY DAY
-await getDayGameIds();
-await runEloAlgo('dayGames.json');
-await getTeamsData();
-await getTodaysGames();
