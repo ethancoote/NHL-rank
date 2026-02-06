@@ -1,5 +1,8 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { getWinProb } from './elo.js';
+import path from 'path';
+
+const dirname = import.meta.dirname;
 
 export async function getDayGameIds () {
     try {
@@ -15,7 +18,7 @@ export async function getDayGameIds () {
             const id = dayGames.games[i].id;
             idArray.push(id);
         }
-        writeFileSync("../src/data/dayGames.json", JSON.stringify(idArray));
+        writeFileSync(path.join(dirname, "../src/data/dayGames.json"), JSON.stringify(idArray));
 
     } catch (err) {
         console.error(`getDayGameIds: ${err}`);
@@ -47,7 +50,7 @@ export async function getGameScore (id) {
 
 export async function getTeamsData () {
     try {
-        const currentTeamsData = JSON.parse(readFileSync("../src/data/teamsData.json"));
+        const currentTeamsData = JSON.parse(readFileSync(path.join(dirname, "../src/data/teamsData.json")));
         const response = await fetch(`https://api-web.nhle.com/v1/standings/now`);
         if (!response.ok) {
             console.error(`getMiscData cannot fetch: ${response.status}`);
@@ -66,7 +69,7 @@ export async function getTeamsData () {
             currentTeamsData[currentTeamIndex].losses = newTeamData.losses;
             currentTeamsData[currentTeamIndex].otLosses = newTeamData.otLosses;
         }
-        writeFileSync("../src/data/teamsData.json", JSON.stringify(currentTeamsData));
+        writeFileSync(path.join( dirname, "../src/data/teamsData.json"), JSON.stringify(currentTeamsData));
     } catch (err) {
         console.error(`getMiscData: ${err}`);
         return null;
@@ -83,11 +86,11 @@ export async function getTodaysGames() {
         const schedule = await response.json();
         const todaysGames = schedule.gameWeek[0]?.games;
         if (!todaysGames) {
-            writeFileSync("../src/data/todaysGames.json", JSON.stringify([]));
+            writeFileSync(path.join(dirname, "../src/data/todaysGames.json"), JSON.stringify([]));
             return [];
         }
 
-        const teamData = JSON.parse(readFileSync("../src/data/teamsData.json"));
+        const teamData = JSON.parse(readFileSync(path.join(dirname, "../src/data/teamsData.json")));
         let allGames = [];
         
         for (let i = 0; i < todaysGames.length; i++) {
@@ -111,7 +114,7 @@ export async function getTodaysGames() {
             allGames.push(game);
         }
 
-        writeFileSync("../src/data/todaysGames.json", JSON.stringify(allGames));
+        writeFileSync(path.join(dirname, "../src/data/todaysGames.json"), JSON.stringify(allGames));
 
     } catch (err) {
         console.error(`getTodaysGames(): ${err}`);
@@ -129,4 +132,8 @@ function getYesterdayString () {
 
 export function githubTest () {
     console.log("SUCCESS!");
+    
+    console.log(path.join(dirname, '../file.txt'));
 }
+
+githubTest();

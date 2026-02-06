@@ -9,9 +9,13 @@ jobs:
   update:
     name: Update Team Stats
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps: 
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Run Update Function
         run: node functions/cron.js
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v7
         
