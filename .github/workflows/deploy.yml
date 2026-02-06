@@ -25,7 +25,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.ethancoote.github.io/NHL-rank/ }}
+      url: ${{ steps.deployment.outputs.ethancoote.page_url }}
 
     runs-on: ubuntu-latest
     steps:
