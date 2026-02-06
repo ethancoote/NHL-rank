@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nhl-rank/static/css/main.5043d4bf.css",
+    "main.js": "/nhl-rank/static/js/main.4b45ba37.js",
+    "static/js/453.cb568190.chunk.js": "/nhl-rank/static/js/453.cb568190.chunk.js",
+    "index.html": "/nhl-rank/index.html",
+    "main.5043d4bf.css.map": "/nhl-rank/static/css/main.5043d4bf.css.map",
+    "main.4b45ba37.js.map": "/nhl-rank/static/js/main.4b45ba37.js.map",
+    "453.cb568190.chunk.js.map": "/nhl-rank/static/js/453.cb568190.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5043d4bf.css",
+    "static/js/main.4b45ba37.js"
+  ]
+}
