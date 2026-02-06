@@ -1,0 +1,24 @@
+name: deploy
+
+on: 
+  workflow_run:
+    workflows: [run-cron]
+    types:
+      - completed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: npm run deploy
+      
+
+    
+
