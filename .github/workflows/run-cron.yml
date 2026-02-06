@@ -1,4 +1,4 @@
-name: run-cron
+name: Run Cron
 
 on: 
   push: 

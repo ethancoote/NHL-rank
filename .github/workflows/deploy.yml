@@ -1,13 +1,13 @@
-name: deploy
+name: Deploy to Pages
 
 on: 
   workflow_run:
-    workflows: [run-cron]
+    workflows: [Run Cron]
     types:
       - completed
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -16,7 +16,21 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy
+  
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.https://ethancoote.github.io/NHL-rank/ }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Github Pages
+        id: deployment
         uses: actions/deploy-pages@v4
       
 
