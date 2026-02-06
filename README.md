@@ -63,4 +63,4 @@ The NHL point system awards more points when teams reach overtime, creating a bi
 
 ## Cron
 
-The ```updateStats()``` function is fun everyday at 10:00 am UTC. Team stats are updated, and the site is redeployed with new, static files.
+The ```updateStats()``` function runs everyday at 10:00am UTC. Team stats are updated and the site is redeployed with new, static files.
