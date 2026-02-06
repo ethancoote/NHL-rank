@@ -7,3 +7,5 @@ export default async function updateStats () {
     await getTeamsData();
     await getTodaysGames();
 }
+
+await updateStats();
