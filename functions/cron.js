@@ -8,4 +8,5 @@ export default async function updateStats () {
     await getTodaysGames();
 }
 
+
 await updateStats();
