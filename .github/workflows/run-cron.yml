@@ -1,9 +1,8 @@
 name: Run Cron
 
 on: 
-  push:
-    branch:
-      - master
+  schedule:
+    -cron: '0 5 * * *'
 
 jobs:
   update:
