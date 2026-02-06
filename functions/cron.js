@@ -1,5 +1,5 @@
-import { getDayGameIds, getTeamsData, getTodaysGames } from "./getData";
-import { runEloAlgo } from "./init";
+import { getDayGameIds, getTeamsData, getTodaysGames } from "./getData.js";
+import { runEloAlgo } from "./init.js";
 
 export default async function updateStats () {
     await getDayGameIds();
@@ -7,6 +7,5 @@ export default async function updateStats () {
     await getTeamsData();
     await getTodaysGames();
 }
-
 
 await updateStats();
