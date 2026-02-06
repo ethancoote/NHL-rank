@@ -1,4 +1,4 @@
-# NHL Rank
+# NHL Rank [![Run Cron](https://github.com/ethancoote/NHL-rank/actions/workflows/run-cron.yml/badge.svg)](https://github.com/ethancoote/NHL-rank/actions/workflows/run-cron.yml) [![Deploy to Pages](https://github.com/ethancoote/NHL-rank/actions/workflows/deploy.yml/badge.svg)](https://github.com/ethancoote/NHL-rank/actions/workflows/deploy.yml)
 
 This app had no association with the NHL.
 
@@ -63,11 +63,4 @@ The NHL point system awards more points when teams reach overtime, creating a bi
 
 ## Cron
 
-These functions will run every 24 hours.
-
-```
-getDayGameIds() // Gets game ids from yesterday’s games.
-runEloAlgo(‘dayGames.json’) // Runs the elo algorithm on yesterday’s games.
-getTeamsData() // Gets updated teams data.
-getTodaysGames() // Gets the upcoming games for the next day.
-```
+The ```updateStats()``` function is fun everyday at 10:00 am UTC. Team stats are updated, and the site is redeployed with new, static files.
