@@ -4,7 +4,7 @@ import './AllGames.css';
 
 
 export default function AllGames () {
-    const allGamesComponent = games.map(game => {
+    const allGamesArray = games.map(game => {
         return (
             <Game 
                 homeTeam={game.homeTeam} 
@@ -21,9 +21,18 @@ export default function AllGames () {
         );
     });
 
+    if (allGamesArray.length === 0) {
+
+    }
     return (
         <>
-        {allGamesComponent}
+        {allGamesArray.length === 0 ? 
+            <div className="game-list__no-games">
+                <p>No Games Today</p>
+            </div> 
+            : <></>
+        }
+        {allGamesArray}
         </>
         
     );
