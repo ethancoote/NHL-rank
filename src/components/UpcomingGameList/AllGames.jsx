@@ -26,11 +26,10 @@ export default function AllGames () {
     }
     return (
         <>
-        {allGamesArray.length === 0 ? 
+        {allGamesArray.length === 0 && 
             <div className="game-list__no-games">
                 <p>No Games Today</p>
             </div> 
-            : <></>
         }
         {allGamesArray}
         </>
