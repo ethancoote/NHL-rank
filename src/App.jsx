@@ -4,6 +4,7 @@ import TeamHome from './pages/TeamHome.jsx';
 import Home from './pages/Home.jsx';
 import { Route, Routes} from 'react-router';
 import teamsData from './data/teamsData.json';
+import { eloSort } from './components/Leaderboard/LeaderboardAllTeamsInfo.jsx';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+    
     <div className="app">
       <Header />
       <Routes>
@@ -19,6 +21,7 @@ function App() {
         {teamRoutes}
       </Routes>
     </div>
+    
     <Footer />
     </>
   );
@@ -26,9 +29,10 @@ function App() {
 
 function getTeamRoutes () {
   let routeArray = [];
-  for (let i = 0; i < teamsData.length; i++) {
-    const teamPath = `/teams/${teamsData[i].teamAbbrev}`;
-    routeArray.push(<Route path={teamPath} element={<TeamHome teamData={teamsData[i]}/>}></Route>);
+  const orderedTeamArray = eloSort(teamsData);
+  for (let i = 0; i < orderedTeamArray.length; i++) {
+    const teamPath = `/teams/${orderedTeamArray[i].teamAbbrev}`;
+    routeArray.push(<Route path={teamPath} element={<TeamHome teamData={orderedTeamArray[i]} eloRank={i+1}/>}></Route>);
   }
   return routeArray;
 }

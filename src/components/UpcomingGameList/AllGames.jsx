@@ -7,8 +7,6 @@ export default function AllGames () {
     const allGamesArray = games.map(game => {
         return (
             <Game 
-                homeTeam={game.homeTeam} 
-                awayTeam={game.awayTeam}
                 timeUTC={game.timeUTC}
                 homeLogo={game.homeLogo}
                 awayLogo={game.awayLogo}

@@ -20,7 +20,7 @@ export default function LeaderboardTeamInfo (props) {
             <div className="leaderboard__team-line">
             
                 <div className="leaderboard__table-logo">
-                    <p>{rank}</p>
+                    <p className="leaderboard__table-rank">{rank}</p>
                     <img 
                         src={logo} 
                         alt="team logo" 

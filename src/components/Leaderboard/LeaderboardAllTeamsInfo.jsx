@@ -49,7 +49,7 @@ export default function LeaderboardAllTeamsInfo () {
     );
 }
 
-function eloSort (data) {
+export function eloSort (data) {
     data = data.sort((a, b) => b.elo - a.elo);
     return data;
 }

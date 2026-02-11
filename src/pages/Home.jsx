@@ -17,7 +17,7 @@ export default function Home () {
 
     return (
         <>
-        <section className="section">
+        <main className="section">
             <div className="mobile-toggle">
                 <button className={display} id="leaderboard-button" onClick={updateDisplay}>Leaderboard</button>
                 <button className={display} id="upcoming-button" onClick={updateDisplay}>Upcoming Games</button>
@@ -27,7 +27,7 @@ export default function Home () {
             <UpcomingGameList display={display}/>
             
             </div>
-        </section>
+        </main>
         </>
     );
 }

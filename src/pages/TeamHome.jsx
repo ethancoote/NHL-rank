@@ -1,9 +1,10 @@
+import TeamDashboard from '../components/TeamDashboard/TeamDashboard';
 
-export default function TeamLayout ({teamData}) {
+export default function TeamLayout ({teamData, eloRank}) {
     return (
         <>
-        <main>
-            <p>{teamData.teamName}</p>
+        <main className='section h-screen'>
+            <TeamDashboard teamData={teamData} eloRank={eloRank}/>
         </main>
         </>
     );

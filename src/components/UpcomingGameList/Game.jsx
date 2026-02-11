@@ -1,6 +1,6 @@
 import './Game.css';
 
-export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, homeElo, awayElo, homeWinProb, awayWinProb}) {
+export default function Game ({homeLogo, awayLogo, timeUTC, homeElo, awayElo, homeWinProb, awayWinProb}) {
 
     const gameTime = getGameTime(timeUTC);
 

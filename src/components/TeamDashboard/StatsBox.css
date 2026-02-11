@@ -1,0 +1,20 @@
+.stats-box {
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    width: 100%;
+    text-align: center;
+    gap: 6px;
+}
+
+.stats-box__head {
+    font-size: 20px;
+}
+
+.stats-box__body {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    font-weight: 700;
+}

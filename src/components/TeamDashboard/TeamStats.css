@@ -1,0 +1,31 @@
+.team-stats {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tint);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    width: 400px;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.team-stats__elo {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.team-stats__text-md {
+    font-size: 20px;
+    line-height: 26px;
+
+    &.center {
+        text-align: center;
+    }
+}
+
+.team-stats__row {
+    display: flex;
+    gap: 12px;
+}
