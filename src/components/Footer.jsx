@@ -6,7 +6,7 @@ export default function Footer () {
             <div className="section across">
                 <div className="box">
                     <div className="footer__logo-wrap">
-                        <img src="./assets/images/nhl-logo.webp" alt="nhl logo"/>
+                        <img src="../assets/images/nhl-logo.webp" alt="nhl logo"/>
                         <p className="footer__logo-text">NHL RANK</p>
                     </div>
                     <p>This is an unofficial NHL Elo ranking. This ranking has no association with the NHL.</p>

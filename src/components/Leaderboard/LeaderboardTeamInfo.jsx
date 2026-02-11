@@ -1,6 +1,8 @@
+import { Link } from 'react-router';
 import './LeaderboardTeamInfo.css';
 
-export default function LeaderboardTeamInfo ({rank, logo, team, elo, gamesPlayed, division, wins, losses, otLosses, oldElo}) {
+export default function LeaderboardTeamInfo (props) {
+    const {rank, logo, team, elo, gamesPlayed, division, wins, losses, otLosses, oldElo} = props;
     const diff = elo - oldElo;
     let diffString = "+0";
     let colorClass = "green";
@@ -11,25 +13,30 @@ export default function LeaderboardTeamInfo ({rank, logo, team, elo, gamesPlayed
         diffString = `${diff}`;
         colorClass = "red";
     }
+
+    const teamPagePath = `/teams/${team}`;
     return (
-        <tr className="leaderboard__team-line">
+        <Link to={teamPagePath}>
+            <tr className="leaderboard__team-line">
             
-            <td className="leaderboard__table-logo">
-                <p>{rank}</p>
-                <img 
-                    src={logo} 
-                    alt="team logo" 
-                    className="leaderboard__logo" 
-                />
-                <p className="leaderboard__team">{team}</p>
-            </td>
-            <td className="leaderboard__table-box leaderboard__gp"><p>{gamesPlayed}</p></td>
-            <td className="leaderboard__table-box"><p>{wins}</p></td>
-            <td className="leaderboard__table-box"><p>{losses}</p></td>
-            <td className="leaderboard__table-box"><p>{otLosses}</p></td>
-            <td className="leaderboard__table-box leaderboard__division"><p>{division}</p></td>
-            <td className="leaderboard__table-box leaderboard__elo"><p>{elo}</p></td>
-            <td className={"leaderboard__table-box leaderboard__diff " + colorClass}><p>{diffString}</p></td>
-        </tr>
+                <td className="leaderboard__table-logo">
+                    <p>{rank}</p>
+                    <img 
+                        src={logo} 
+                        alt="team logo" 
+                        className="leaderboard__logo" 
+                    />
+                    <p className="leaderboard__team">{team}</p>
+                </td>
+                <td className="leaderboard__table-box leaderboard__gp"><p>{gamesPlayed}</p></td>
+                <td className="leaderboard__table-box"><p>{wins}</p></td>
+                <td className="leaderboard__table-box"><p>{losses}</p></td>
+                <td className="leaderboard__table-box"><p>{otLosses}</p></td>
+                <td className="leaderboard__table-box leaderboard__division"><p>{division}</p></td>
+                <td className="leaderboard__table-box leaderboard__elo"><p>{elo}</p></td>
+                <td className={"leaderboard__table-box leaderboard__diff " + colorClass}><p>{diffString}</p></td>
+            </tr>
+        </Link>
+        
     );
 }
