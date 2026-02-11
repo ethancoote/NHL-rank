@@ -16,10 +16,10 @@ export default function LeaderboardTeamInfo (props) {
 
     const teamPagePath = `/teams/${team}`;
     return (
-        <Link to={teamPagePath}>
-            <tr className="leaderboard__team-line">
+        <Link to={teamPagePath} className='leaderboard__link'>
+            <div className="leaderboard__team-line">
             
-                <td className="leaderboard__table-logo">
+                <div className="leaderboard__table-logo">
                     <p>{rank}</p>
                     <img 
                         src={logo} 
@@ -27,15 +27,15 @@ export default function LeaderboardTeamInfo (props) {
                         className="leaderboard__logo" 
                     />
                     <p className="leaderboard__team">{team}</p>
-                </td>
-                <td className="leaderboard__table-box leaderboard__gp"><p>{gamesPlayed}</p></td>
-                <td className="leaderboard__table-box"><p>{wins}</p></td>
-                <td className="leaderboard__table-box"><p>{losses}</p></td>
-                <td className="leaderboard__table-box"><p>{otLosses}</p></td>
-                <td className="leaderboard__table-box leaderboard__division"><p>{division}</p></td>
-                <td className="leaderboard__table-box leaderboard__elo"><p>{elo}</p></td>
-                <td className={"leaderboard__table-box leaderboard__diff " + colorClass}><p>{diffString}</p></td>
-            </tr>
+                </div>
+                <div className="leaderboard__table-box leaderboard__gp"><p>{gamesPlayed}</p></div>
+                <div className="leaderboard__table-box"><p>{wins}</p></div>
+                <div className="leaderboard__table-box"><p>{losses}</p></div>
+                <div className="leaderboard__table-box"><p>{otLosses}</p></div>
+                <div className="leaderboard__table-box leaderboard__division"><p>{division}</p></div>
+                <div className="leaderboard__table-box leaderboard__elo"><p>{elo}</p></div>
+                <div className={"leaderboard__table-box leaderboard__diff " + colorClass}><p>{diffString}</p></div>
+            </div>
         </Link>
         
     );
