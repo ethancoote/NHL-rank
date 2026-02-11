@@ -1,6 +1,9 @@
 import './Game.css';
 
 export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, homeElo, awayElo, homeWinProb, awayWinProb}) {
+
+    const gameTime = getGameTime(timeUTC);
+
     return (
         <div className="game-list__game">
             <div className="game-list__team">
@@ -10,7 +13,7 @@ export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, 
             </div>
             <div className="game-list__vs">
                 <p className="game-list__large-text">VS</p>
-                <p>{timeUTC} UTC</p>
+                <p>{gameTime}</p>
             </div>
             <div className="game-list__team">
                 <img src={awayLogo} alt="away team logo" />
@@ -19,4 +22,17 @@ export default function Game ({homeTeam, awayTeam, homeLogo, awayLogo, timeUTC, 
             </div>
         </div>
     );
+}
+
+function getGameTime (timeUTC) {
+
+    const [hour, min] = timeUTC.split(':');
+
+    const today = new Date();
+    const utcDate = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate(), hour, min));
+
+    const options = {hour: '2-digit', minute: '2-digit'};
+    const gameTime = new Intl.DateTimeFormat('en-US', options).format(utcDate);
+
+    return gameTime;
 }
