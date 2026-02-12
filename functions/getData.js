@@ -129,11 +129,3 @@ function getYesterdayString () {
     const dateString = yesterday.toISOString().slice(0, 10);
     return dateString;
 }
-
-export function githubTest () {
-    console.log("SUCCESS!");
-    
-    console.log(path.join(dirname, '../file.txt'));
-}
-
-githubTest();

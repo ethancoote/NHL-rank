@@ -9,10 +9,18 @@ export default function updateElo (gameScore, teamsData) {
     const awayScore = gameScore.awayScore;
     const ot = gameScore.ot;
 
-    const homeTeamIndex = teamsData.findIndex(team => team.teamAbbrev === homeTeam);
-    const awayTeamIndex = teamsData.findIndex(team => team.teamAbbrev === awayTeam);
-    const homeTeamElo = teamsData[homeTeamIndex].elo;
-    const awayTeamElo = teamsData[awayTeamIndex].elo;
+    let homeTeamIndex, awayTeamIndex, homeTeamElo, awayTeamElo = 0;
+
+    try {
+        homeTeamIndex = teamsData.findIndex(team => team.teamAbbrev === homeTeam);
+        awayTeamIndex = teamsData.findIndex(team => team.teamAbbrev === awayTeam);
+        homeTeamElo = teamsData[homeTeamIndex].elo;
+        awayTeamElo = teamsData[awayTeamIndex].elo;
+    } catch (err) {
+        console.log(`home: ${homeTeam} away: ${awayTeam} | Non-NHL teams.`);
+        return teamsData;
+    }
+    
 
     let newElo = {
         winnerElo: 0,
