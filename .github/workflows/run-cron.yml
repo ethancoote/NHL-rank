@@ -3,6 +3,8 @@ name: Run Cron
 on: 
   schedule:
     - cron: '0 10 * * *'
+    
+  workflow-displatch:
 
 jobs:
   update:
