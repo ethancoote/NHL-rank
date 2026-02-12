@@ -1,22 +1,27 @@
 import { writeFileSync, readFileSync } from 'fs';
 import updateElo from './elo.js';
-import {getGameScore} from './getData.js';
+import {getGameScore } from './getData.js';
+import { sleep } from './helpers.js';
 import path from 'path';
 
 const dirname = import.meta.dirname;
 
-export function initData () {
-    fetch("https://api-web.nhle.com/v1/standings/now")
-        .then(response => response.json())
-        .then((response) => {
-            const data = JSON.stringify(response);
-            writeFileSync(path.join(dirname, "../src/data/standings.json"), data, 'utf8');
+export async function initData () {
+    try {
+        const response = await fetch("https://api-web.nhle.com/v1/standings/now");
+        if (!response.ok) {
+            throw new Error(`initData - Bad Response: ${response.status}`);
+        }
+        const data = await response.json();
+        writeFileSync(path.join(dirname, "../src/data/standings.json"), JSON.stringify(data), 'utf8');
 
-        });
+    } catch (err) {
+        console.error(`initData - Counldn't fetch: ${err}`);
+    }
 }
 
 export function initTeamsDataJSON (filepath) {
-    const data = JSON.parse(readFileSync(path.join(dirname, filepath)));
+    const data = JSON.parse(readFileSync(path.join(dirname, `../src/data/${filepath}`)));
     let teamsData = [];
     const standings = data.standings
     for (let i = 0; i< standings.length; i++) {
@@ -30,25 +35,7 @@ export function initTeamsDataJSON (filepath) {
         teamsData.push(teamData);
     }
 
-    writeFileSync(path.join(dirname, "../src/data/teamData.json"), JSON.stringify(teamsData));
-}
-
-//date format 'YYYY-MM-DD'
-export function getWeekGames (date) {
-    let gamesArray = [];
-
-    fetch(`https://api-web.nhle.com/v1/schedule/${date}`)
-        .then(response => response.json())
-        .then((response) => {
-            const schedule = response.gameWeek;
-            for (let i = 0; i < schedule.length; i++) {
-                gamesArray.push(schedule[i].games);
-                
-            }
-            gamesArray = gamesArray.flat();
-            writeFileSync(path.join(dirname, `../src/data/gameIds${date}.json`), `${gamesArray},`, {flag: 'a'});
-            
-        });
+    writeFileSync(path.join(dirname, "../src/data/teamsData.json"), JSON.stringify(teamsData));
 }
 
 export async function runEloAlgo (filename) {
@@ -67,6 +54,7 @@ export async function runEloAlgo (filename) {
         }
         teamsData = teamsDataTemp;
         console.log(`Game: ${i+1}/${gameIdArray.length}`);
+        await sleep(500);
     }
 
     writeFileSync(path.join(dirname, "../src/data/teamsData.json"), JSON.stringify(teamsData));

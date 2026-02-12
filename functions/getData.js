@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { getWinProb } from './elo.js';
+import { sleep, getYesterdayString } from './helpers.js';
 import path from 'path';
 
 const dirname = import.meta.dirname;
@@ -141,15 +142,6 @@ function getGameData (game, homeTeam, awayTeam) {
     return gameObj;
 }
 
-function getYesterdayString () {
-    const today = new Date();
-    const yesterday = new Date();
-    yesterday.setDate(today.getDate() -1);
-
-    const dateString = yesterday.toISOString().slice(0, 10);
-    return dateString;
-}
-
 async function getNextGame (teamAbbrev, teamsData) {
     let game = null;
     let date = new Date();
@@ -195,9 +187,3 @@ async function getNextGame (teamAbbrev, teamsData) {
         return null;
     }
 } 
-
-function sleep (ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-await getTeamsData();
