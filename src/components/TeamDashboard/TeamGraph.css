@@ -1,7 +1,7 @@
 .team-graph {
     display: flex;
     flex-direction: column;
-    background-color: var(--tint);
+    background-color: var(--tint-dark);
     padding: 24px;
     border-radius: var(--border-radius);
     width: 100%;

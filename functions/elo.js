@@ -62,10 +62,10 @@ function eloFormula (winnerElo, loserElo, ot) {
     let winnerPoints = 1;
     let loserPoints = 0;
     if (ot) {
-        winnerPoints = 0.75;
-        loserPoints = 0.25;
+        winnerPoints = 0.80;
+        loserPoints = 0.20;
     }
-    const k = 64;
+    const k = 20;
     const winnerNewElo = Math.round(winnerElo + k * (winnerPoints - winnerExpected));
     const loserNewElo = Math.round(loserElo + k * (loserPoints - loserExpected));
 

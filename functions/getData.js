@@ -50,10 +50,10 @@ export async function getGameScore (id) {
 
 export async function getTeamsData () {
     try {
-        const currentTeamsData = JSON.parse(readFileSync(path.join(dirname, "../src/data/teamsData.json")));
+        let currentTeamsData = JSON.parse(readFileSync(path.join(dirname, "../src/data/teamsData.json")));
         const response = await fetch(`https://api-web.nhle.com/v1/standings/now`);
         if (!response.ok) {
-            console.error(`getMiscData cannot fetch: ${response.status}`);
+            console.error(`getTeamsData cannot fetch: ${response.status}`);
             return null;
         }
         let teamsData = await response.json();
@@ -68,10 +68,12 @@ export async function getTeamsData () {
             currentTeamsData[currentTeamIndex].wins = newTeamData.wins;
             currentTeamsData[currentTeamIndex].losses = newTeamData.losses;
             currentTeamsData[currentTeamIndex].otLosses = newTeamData.otLosses;
+            console.log(`${i} ----------------- ${newTeamData.teamAbbrev.default}`);
+            currentTeamsData = await getNextGame(newTeamData.teamAbbrev.default, currentTeamsData);
         }
         writeFileSync(path.join( dirname, "../src/data/teamsData.json"), JSON.stringify(currentTeamsData));
     } catch (err) {
-        console.error(`getMiscData: ${err}`);
+        console.error(`getTeamsData: ${err}`);
         return null;
     }
 }
@@ -121,6 +123,24 @@ export async function getTodaysGames() {
     }
 }
 
+function getGameData (game, homeTeam, awayTeam) {
+    const winProb = getWinProb(homeTeam.elo, awayTeam.elo);
+    const gameObj = {
+        homeTeam: game.homeTeam.abbrev,
+        awayTeam: game.awayTeam.abbrev,
+        timeUTC: game.startTimeUTC.slice(11, 16),
+        homeLogo: game.homeTeam.logo,
+        awayLogo: game.awayTeam.logo,
+        homeWinProb: Math.round(winProb.homeWinProb * 10000) / 100,
+        awayWinProb: Math.round(winProb.awayWinProb * 10000) / 100,
+        homeElo: homeTeam.elo,
+        awayElo: awayTeam.elo,
+        gameDate: game.gameDate
+    }
+
+    return gameObj;
+}
+
 function getYesterdayString () {
     const today = new Date();
     const yesterday = new Date();
@@ -130,10 +150,54 @@ function getYesterdayString () {
     return dateString;
 }
 
-export function githubTest () {
-    console.log("SUCCESS!");
+async function getNextGame (teamAbbrev, teamsData) {
+    let game = null;
+    let date = new Date();
     
-    console.log(path.join(dirname, '../file.txt'));
+    try {
+        
+        for (let j = 0; j < 8 && game === null; j++) {
+
+            // set new date string
+            let month = (date.getMonth() + 1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false});
+            let day = date.getDate().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false});
+            let dateString = `${date.getFullYear()}-${month}-${day}`;
+
+            // api this weeks games
+            const response = await fetch(`https://api-web.nhle.com/v1/club-schedule/${teamAbbrev}/week/${dateString}`);
+            if (!response.ok) {
+                throw new Error(`fetch failed bro: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // to prevent rate limiting
+            await sleep(1000);
+
+            // FUT is a future game. Looking if a future game exists this week
+            for (let i = 0; i < data.games.length; i++) {
+                if (data.games[i].gameState === "FUT") {
+                    const homeIndex = teamsData.findIndex(team => team.teamAbbrev === data.games[i].homeTeam.abbrev);
+                    const awayIndex = teamsData.findIndex(team => team.teamAbbrev === data.games[i].awayTeam.abbrev);
+                    game = getGameData(data.games[i], teamsData[homeIndex], teamsData[awayIndex]);
+                    break;
+                }
+            }
+
+            date.setDate(date.getDate()+7);
+        }
+
+        const teamIndex = teamsData.findIndex(team => team.teamAbbrev === teamAbbrev);
+        teamsData[teamIndex].nextGame = game;
+        return teamsData;
+
+    } catch (err) {
+        console.error(`ERROR: ${err}`);
+        return null;
+    }
+} 
+
+function sleep (ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-githubTest();
+await getTeamsData();

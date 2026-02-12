@@ -13,6 +13,10 @@
     &:last-of-type {
         margin-bottom: 0px;
     }
+
+    &.bg-white {
+        background-color: white;
+    }
 }
 
 .game-list__team {
