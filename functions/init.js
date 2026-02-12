@@ -1,6 +1,6 @@
 import { writeFileSync, readFileSync } from 'fs';
 import updateElo from './elo.js';
-import {getGameScore } from './getData.js';
+import { getGameScore } from './getData.js';
 import { sleep } from './helpers.js';
 import path from 'path';
 
