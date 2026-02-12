@@ -32,6 +32,10 @@
   &.h-screen {
     min-height: 100vh;
   }
+
+  &.h-90 {
+    min-height: 90vh;
+  }
 }
 
 @media only screen and (max-width: 600px) {

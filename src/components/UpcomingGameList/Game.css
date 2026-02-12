@@ -17,6 +17,10 @@
     &.bg-white {
         background-color: white;
     }
+
+    &.border-solid {
+        border: var(--thin-border);
+    }
 }
 
 .game-list__team {

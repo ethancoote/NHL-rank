@@ -9,7 +9,7 @@ export default function TeamStats ({teamData}) {
 
     return (
         <div className="team-stats">
-            <div>
+            <div className='team-stats__row align-end g-12'>
                 <p className="team-stats__elo">{teamData.elo}</p>
                 <p className="team-stats__text-md center">Elo Rating</p>
             </div>
@@ -20,8 +20,8 @@ export default function TeamStats ({teamData}) {
                     <StatsBox head="OTL" body={teamData.otLosses} bg="yellow"/>
                 </div>
                 <div className="team-stats__row">
-                    <StatsBox head="Games Played" body={teamData.gamesPlayed}/>
-                    <StatsBox head="Win Percent" body={`${winPercent}%`}/>
+                    <StatsBox head="Games Played" body={teamData.gamesPlayed} bg="tint"/>
+                    <StatsBox head="Win Percent" body={`${winPercent}%`} bg="tint"/>
                 </div>
             </div>
             
@@ -38,7 +38,8 @@ export default function TeamStats ({teamData}) {
                     awayElo={nextGame.awayElo}
                     homeWinProb={nextGame.homeWinProb}
                     awayWinProb={nextGame.awayWinProb}
-                    bgWhite={true}
+                    bgWhite={false}
+                    border={false}
                 />
             </div>
             

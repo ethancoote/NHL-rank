@@ -17,7 +17,7 @@ export default function TeamDashboard ({teamData, eloRank}) {
             </div>
             <div className="dashboard__content">
                 <TeamStats teamData={teamData}/>
-                <TeamGraph />
+                <TeamGraph teamData={teamData}/>
             </div>
             
         </div>

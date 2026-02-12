@@ -1,16 +1,21 @@
 import './Game.css';
 
-export default function Game ({homeLogo, awayLogo, timeUTC, homeElo, awayElo, homeWinProb, awayWinProb, bgWhite}) {
+export default function Game ({homeLogo, awayLogo, timeUTC, homeElo, awayElo, homeWinProb, awayWinProb, bgWhite, border}) {
     
     const gameTime = getGameTime(timeUTC);
+
     let bgClass = "";
-    
     if (bgWhite) {
         bgClass = "bg-white"
     }
 
+    let borderClass = "";
+    if (border) {
+        borderClass = "border-solid";
+    }
+
     return (
-        <div className={`game-list__game ${bgClass}`}>
+        <div className={`game-list__game ${bgClass} ${borderClass}`}>
             <div className="game-list__team">
                 <img src={homeLogo} alt="home team logo" />
                 <p><b>{homeElo}</b></p>

@@ -1,24 +1,25 @@
 .stats-box {
     background-color: white;
-    padding: 12px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
     width: 100%;
     text-align: center;
     gap: 2px;
-    border: solid 4px white;
+    /*border: var(--thin-border);*/
 
     &.bg-green {
         background-image: linear-gradient(to top right, rgb(238, 243, 188), rgb(199, 247, 199));
     }
-
     &.bg-red {
         background-image: linear-gradient(to top right, rgb(255, 194, 237), rgb(245, 197, 197));
     }
-
     &.bg-yellow {
         background-image: linear-gradient(to top right, rgb(239, 245, 212), rgb(255, 220, 176));
+    }
+    &.bg-tint {
+        background-color: var(--tint);
     }
 
     &.shadow {

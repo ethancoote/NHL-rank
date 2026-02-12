@@ -9,6 +9,8 @@ export default function StatsBox ({head, body, bg, shadow}) {
         bgClass = "bg-red";
     } else if (bg === "yellow") {
         bgClass = "bg-yellow";
+    } else if (bg === "tint") {
+        bgClass = "bg-tint";
     }
 
     let shadowClass = "";

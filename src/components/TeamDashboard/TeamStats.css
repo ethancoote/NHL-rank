@@ -1,17 +1,17 @@
 .team-stats {
     display: flex;
     flex-direction: column;
-    background-color: var(--tint);
-    padding: 24px;
+    /*background-color: var(--tint-dark);*/
+    padding: 0px;
     border-radius: var(--border-radius);
     width: 400px;
-    gap: 32px;
+    gap: 24px;
     flex-shrink: 0;
 }
 
 .team-stats__elo {
-    font-size: 4.5rem;
-    line-height: 5rem;
+    font-size: 7rem;
+    line-height: 6.5rem;
     font-weight: 700;
     text-align: center;
 }
@@ -44,7 +44,7 @@
 
 .team-stats__row {
     display: flex;
-    gap: 12px;
+    gap: 8px;
 
     &.apart {
         justify-content: space-between;
@@ -54,12 +54,20 @@
         padding-left: 4px;
         padding-right: 4px;
     }
+
+    &.align-end {
+        align-items: end;
+    }
+
+    &.g-12 {
+        gap: 12px
+    }
 }
 
 .team-stats__col {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 
     &.apart {
         justify-content: space-between;

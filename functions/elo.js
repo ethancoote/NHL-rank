@@ -20,7 +20,6 @@ export default function updateElo (gameScore, teamsData) {
         console.log(`home: ${homeTeam} away: ${awayTeam} | Non-NHL teams.`);
         return teamsData;
     }
-    
 
     let newElo = {
         winnerElo: 0,
