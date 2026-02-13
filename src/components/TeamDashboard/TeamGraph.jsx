@@ -26,7 +26,7 @@ ChartJS.register(
 
 export default function TeamGraph ({teamData, allTeamsData}) {
 
-    defaults.font.size = 17;
+    defaults.font.size = 15;
     defaults.font.family = 'Segoe UI';
     defaults.color = 'black';
 

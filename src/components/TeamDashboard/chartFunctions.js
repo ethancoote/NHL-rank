@@ -24,7 +24,7 @@ export const options = {
     scales: {
         y: {
             title: {
-                display: true,
+                display: false,
                 text: "Elo",
                 font: {
                     weight: 700

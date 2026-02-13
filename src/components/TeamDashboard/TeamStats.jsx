@@ -9,7 +9,7 @@ export default function TeamStats ({teamData}) {
 
     return (
         <div className="team-stats">
-            <div className='team-stats__row align-end g-12'>
+            <div className='team-stats__row align-end g-12' id="elo-rating">
                 <p className="team-stats__elo">{teamData.elo}</p>
                 <p className="team-stats__text-md center">Elo Rating</p>
             </div>

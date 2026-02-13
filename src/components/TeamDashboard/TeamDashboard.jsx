@@ -10,7 +10,7 @@ export default function TeamDashboard ({teamData, eloRank, allTeamsData}) {
                     <img className="dashboard__logo" src={teamData.teamLogo} alt={`${teamData.teamAbbrev} Logo`}/>
                     <h1>{teamData.teamName}</h1>
                 </div>
-                <div >
+                <div className="dashboard__elo-rank-wrap">
                     <p className="dashboard__elo-rank">#{eloRank}</p>
                     <p className="dashboard__text-md">Elo Rank</p>
                 </div>

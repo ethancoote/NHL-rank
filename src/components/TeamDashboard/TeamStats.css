@@ -77,3 +77,16 @@
         gap: 8px
     }
 }
+
+@media only screen and (max-width:1100px) {
+    .team-stats {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    #elo-rating {
+        flex-direction: column;
+        align-items: center;
+    }
+}
