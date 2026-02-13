@@ -18,8 +18,10 @@
 }
 
 .header__button {
+    display: flex;
     height: fit-content;
     align-self: center;
+    margin-left: 8px;
     img {
         width: 42px;
         aspect-ratio: 1;
@@ -36,6 +38,7 @@
     align-items: center;
     gap: 20px;
     text-decoration: none;
+    z-index: 10;
 
     img {
         width: 56px;
@@ -54,22 +57,4 @@
     font-size: 2.5rem;
     font-weight: 500;
     color: black;
-}
-
-.header__menu {
-    display: flex;
-    align-items: center;
-    .header__menu-link {
-        text-decoration: none;
-        color: black;
-        transition: 0.2s;
-        padding: 4px;
-        margin-right: 24px;
-        p {
-            font-size: 20px;
-        }
-        &:hover {
-            color: hsla(0, 0%, 0%, 0.4);
-        }
-    }
 }
