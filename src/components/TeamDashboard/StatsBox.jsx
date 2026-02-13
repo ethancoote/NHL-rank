@@ -1,6 +1,6 @@
 import './StatsBox.css';
 
-export default function StatsBox ({head, body, bg, shadow}) {
+export default function StatsBox ({head, body, bg, shadow, border}) {
 
     let bgClass = "";
     if (bg === "green") {
@@ -18,8 +18,13 @@ export default function StatsBox ({head, body, bg, shadow}) {
         shadowClass = "shadow";
     }
 
+    let borderClass = "";
+    if (border) {
+        borderClass = "border-solid";
+    }
+
     return (
-        <div className={`stats-box ${bgClass} ${shadowClass}`}>
+        <div className={`stats-box ${bgClass} ${shadowClass} ${borderClass}`}>
             <p className="stats-box__head">{head}</p>
             <p className="stats-box__body">{body}</p>
         </div>

@@ -21,9 +21,12 @@
     &.bg-tint {
         background-color: var(--tint);
     }
+    &.border-solid {
+        border: var(--thin-border);
+    }
 
     &.shadow {
-        box-shadow: 0px 5px 8px hsla(0, 0%, 0%, 0.05);
+        box-shadow: 0px 5px 8px hsla(0, 0%, 0%, 0.08);
     }
 
 }

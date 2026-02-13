@@ -15,9 +15,9 @@ export default function TeamStats ({teamData}) {
             </div>
             <div className="team-stats__col">
                 <div className="team-stats__row">
-                    <StatsBox head="Win" body={teamData.wins} bg="green"/>
-                    <StatsBox head="Loss" body={teamData.losses} bg="red"/>
-                    <StatsBox head="OTL" body={teamData.otLosses} bg="yellow"/>
+                    <StatsBox head="Win" body={teamData.wins} border={true} shadow={true}/>
+                    <StatsBox head="Loss" body={teamData.losses} border={true} shadow={true}/>
+                    <StatsBox head="OTL" body={teamData.otLosses} border={true} shadow={true}/>
                 </div>
                 <div className="team-stats__row">
                     <StatsBox head="Games Played" body={teamData.gamesPlayed} bg="tint"/>

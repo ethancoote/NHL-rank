@@ -1,0 +1,6 @@
+.teams-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    width: 100%;
+    gap: 16px;
+}

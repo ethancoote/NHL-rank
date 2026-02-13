@@ -2,7 +2,7 @@ import TeamStats from './TeamStats';
 import TeamGraph from './TeamGraph';
 import './TeamDashboard.css';
 
-export default function TeamDashboard ({teamData, eloRank}) {
+export default function TeamDashboard ({teamData, eloRank, allTeamsData}) {
     return (
         <div className="dashboard">
             <div className="dashboard__header">
@@ -17,7 +17,7 @@ export default function TeamDashboard ({teamData, eloRank}) {
             </div>
             <div className="dashboard__content">
                 <TeamStats teamData={teamData}/>
-                <TeamGraph teamData={teamData}/>
+                <TeamGraph teamData={teamData} allTeamsData={allTeamsData}/>
             </div>
             
         </div>

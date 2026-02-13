@@ -8,9 +8,14 @@ export default function Header () {
                 <img src="../assets/images/nhl-logo.webp" alt="nhl logo"/>
                 <p className="header__title">NHL Rank</p>
             </Link>
-            <a href="https://github.com/ethancoote/NHL-rank" className="header__button" target="_blank" rel="noreferrer">
-                <img src="../assets/images/github-logo.svg" alt="github logo"/>
-            </a>
+            <div className="header__menu">
+                <Link to="/" className="header__menu-link"><p>Leaderboard</p></Link>
+                <Link to="/teams" className="header__menu-link"><p>Teams</p></Link>
+                <a href="https://github.com/ethancoote/NHL-rank" className="header__button" target="_blank" rel="noreferrer">
+                    <img src="../assets/images/github-logo.svg" alt="github logo"/>
+                </a>
+            </div>
+            
         </header>
     );
 }

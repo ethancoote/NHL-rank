@@ -1,0 +1,11 @@
+.teams__text-head {
+    text-align: center;
+    align-self: center;
+    line-height: 4rem;
+}
+
+.teams__text-md {
+    font-size: 20px;
+    align-self: center;
+    margin-bottom: 8px;
+}

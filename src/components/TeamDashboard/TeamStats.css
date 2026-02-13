@@ -44,7 +44,7 @@
 
 .team-stats__row {
     display: flex;
-    gap: 8px;
+    gap: 12px;
 
     &.apart {
         justify-content: space-between;
@@ -67,7 +67,7 @@
 .team-stats__col {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 
     &.apart {
         justify-content: space-between;

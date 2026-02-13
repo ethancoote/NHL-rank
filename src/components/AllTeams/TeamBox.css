@@ -1,0 +1,20 @@
+.team-box {
+    display: flex;
+    background-color: white;
+    padding: 24px 8px;
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    aspect-ratio: 1;
+    justify-content: center;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: var(--box-shadow);
+        border-color: hsla(0, 0%, 0%, 0.5);
+        cursor: pointer;
+    }
+
+    img {
+        width: 128px;
+    }
+}

@@ -24,38 +24,50 @@ ChartJS.register(
     PointElement
 );
 
-export default function TeamGraph ({teamData}) {
+export default function TeamGraph ({teamData, allTeamsData}) {
 
     defaults.font.size = 17;
     defaults.font.family = 'Segoe UI';
     defaults.color = 'black';
 
-    const dataArrays = mapToObjArrays(teamData.pastGames);
+    const allDatasets = [];
 
-    console.log(dataArrays.gameNumbers);
+    for (let i = 0; i < allTeamsData.length; i++) {
+        const dataArrays = mapToObjArrays(allTeamsData[i].pastGames);
+
+        const dataset = {
+            label: allTeamsData[i].teamAbbrev,
+            data: dataArrays.elo,
+            borderColor: 'hsla(0, 0%, 69%, 0.32)',
+            backgroundColor: 'hsla(0, 0%, 77%, 0.81)',
+            pointRadius: 0,
+            tension: 0,
+            borderJoinStyle: 'round',
+            borderCapStyle: 'round',
+            borderWidth: 2
+        }
+
+        if (allTeamsData[i].teamAbbrev === teamData.teamAbbrev) {
+            dataset.pointRadius = 2;
+            dataset.borderWidth = 3;
+            dataset.backgroundColor = 'hsla(224, 58%, 45%, 0.50)';
+            dataset.borderColor = 'hsl(246, 38%, 60%)';
+        }
+
+        allDatasets.push(dataset);
+    }
+
     const data = {
-        labels: dataArrays.gameNumbers,
-        datasets: [
-            {
-                label: teamData.teamAbbrev,
-                data: dataArrays.elo,
-                borderColor: 'hsl(246, 38%, 60%)',
-                backgroundColor: 'hsla(224, 58%, 45%, 0.50)',
-                pointRadius: 2,
-                tension: .2,
-                borderJoinStyle: 'round',
-                borderCapStyle: 'round',
-                borderWidth: 3
-            },
-            {
+        labels: [...Array(teamData.gamesPlayed).keys()],
+        datasets: allDatasets
+            /*{
                 label: "Average Rating",
                 data: dataArrays.averageNumbers,
                 borderColor: 'hsla(0, 0%, 69%, 0.70)',
                 backgroundColor: 'hsla(0, 0%, 77%, 0.81)',
                 pointRadius: 0,
                 borderWidth: 2
-            }
-        ]
+            }*/
     }
 
     return (
@@ -65,4 +77,3 @@ export default function TeamGraph ({teamData}) {
         </div>
     );
 }
-
