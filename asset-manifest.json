@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "./static/css/main.e6274fba.css",
-    "main.js": "./static/js/main.71035c65.js",
-    "index.html": "./index.html",
-    "main.e6274fba.css.map": "./static/css/main.e6274fba.css.map",
-    "main.71035c65.js.map": "./static/js/main.71035c65.js.map"
+    "main.css": "./NHL-rank/static/css/main.e6274fba.css",
+    "main.js": "./NHL-rank/static/js/main.71035c65.js",
+    "index.html": "./NHL-rank/index.html",
+    "main.e6274fba.css.map": "./NHL-rank/static/css/main.e6274fba.css.map",
+    "main.71035c65.js.map": "./NHL-rank/static/js/main.71035c65.js.map"
   },
   "entrypoints": [
     "static/css/main.e6274fba.css",
