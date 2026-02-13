@@ -1,14 +1,32 @@
 .leaderboard__team-line {
     display: flex;
-    padding: 0px 0px;
+    padding: 0px 12px;
     justify-content: start;
     align-items: center;
     width: 100%;
     border-bottom: 1px solid hsla(0, 0%, 0%, .1);
 }
 
+@media only screen and (max-width: 600px) {
+    .leaderboard__team-line {
+        padding: 0px;
+    }
+}
+
+.leaderboard__link {
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, .95);
+    :hover {
+        background-color: hsl(0, 0%, 94%);
+    }
+}
+
 .leaderboard__logo {
     object-fit: contain;
     aspect-ratio: 1;
     width: 64px;
+}
+
+.leaderboard__table-rank {
+    width: 24px;
 }

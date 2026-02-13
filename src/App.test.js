@@ -41,7 +41,3 @@ test('Footer Images', () => {
   expect(logo).toBeInTheDocument();
   expect(logo).toHaveAttribute('src', './assets/images/nhl-logo.webp');
 });
-
-
-
-

@@ -1,0 +1,16 @@
+.team-graph {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: white;
+    padding: 0px;
+    border-radius: var(--border-radius);
+    width: 100%;
+    gap: 12px;
+}
+
+@media only screen and (max-width:600px) {
+    .team-graph {
+        min-height: 300px;
+    }
+}

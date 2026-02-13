@@ -27,29 +27,29 @@ export default function LeaderboardAllTeamsInfo () {
     });
 
     return (
-        <table>
-            <thead className="leaderboard__sticky-head">
-                <tr className="leaderboard__table-head">
-                    <th className="leaderboard__table-logo">Team</th>
-                    <th className="leaderboard__table-box leaderboard__gp">GP</th>
-                    <th className="leaderboard__table-box">W</th>
-                    <th className="leaderboard__table-box">L</th>
-                    <th className="leaderboard__table-box">OTL</th>
-                    <th className="leaderboard__table-box leaderboard__division">Division</th>
-                    <th className="leaderboard__table-box leaderboard__elo">Elo</th>
-                    <th className="leaderboard__table-box leaderboard__diff"></th>
-                </tr>
+        <div>
+            <div className="leaderboard__sticky-head">
+                <div className="leaderboard__table-head">
+                    <div className="leaderboard__table-logo">Team</div>
+                    <div className="leaderboard__table-box leaderboard__gp">GP</div>
+                    <div className="leaderboard__table-box">W</div>
+                    <div className="leaderboard__table-box">L</div>
+                    <div className="leaderboard__table-box">OTL</div>
+                    <div className="leaderboard__table-box leaderboard__division">Division</div>
+                    <div className="leaderboard__table-box leaderboard__elo">Elo</div>
+                    <div className="leaderboard__table-box leaderboard__diff"></div>
+                </div>
                 
-            </thead>
-            <tbody>
+            </div>
+            <div>
                 {teamInfoComponents}
-            </tbody>
+            </div>
             
-        </table>
+        </div>
     );
 }
 
-function eloSort (data) {
+export function eloSort (data) {
     data = data.sort((a, b) => b.elo - a.elo);
     return data;
 }

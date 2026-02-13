@@ -13,6 +13,14 @@
     &:last-of-type {
         margin-bottom: 0px;
     }
+
+    &.bg-white {
+        background-color: white;
+    }
+
+    &.border-solid {
+        border: var(--thin-border);
+    }
 }
 
 .game-list__team {

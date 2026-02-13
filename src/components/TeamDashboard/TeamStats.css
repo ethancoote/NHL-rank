@@ -1,0 +1,92 @@
+.team-stats {
+    display: flex;
+    flex-direction: column;
+    /*background-color: var(--tint-dark);*/
+    padding: 0px;
+    border-radius: var(--border-radius);
+    width: 400px;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.team-stats__elo {
+    font-size: 7rem;
+    line-height: 6.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.team-stats__text-md {
+    font-size: 20px;
+    line-height: 26px;
+
+    &.center {
+        text-align: center;
+    }
+
+    &.bold {
+        font-weight: 700;
+    }
+}
+
+.team-stats__text-sm {
+    font-size: 18px;
+    line-height: 26px;
+
+    &.center {
+        text-align: center;
+    }
+
+    &.bold {
+        font-weight: 700;
+    }
+}
+
+.team-stats__row {
+    display: flex;
+    gap: 12px;
+
+    &.apart {
+        justify-content: space-between;
+    }
+
+    &.p-x-4 {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    &.align-end {
+        align-items: end;
+    }
+
+    &.g-12 {
+        gap: 12px
+    }
+}
+
+.team-stats__col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &.apart {
+        justify-content: space-between;
+    }
+
+    &.g-8 {
+        gap: 8px
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .team-stats {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    #elo-rating {
+        flex-direction: column;
+        align-items: center;
+    }
+}

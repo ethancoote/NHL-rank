@@ -1,19 +1,20 @@
 .leaderboard__table-head {
     display: flex;
-    padding: 0px 0px;
+    padding: 12px;
     justify-content: start;
     align-items: center;
     width: 100%;
     text-align: start;
     border-bottom: 1px solid hsla(0, 0%, 0% ,0.3);
     padding-bottom: 8px;
-    margin-top: 16px;
+    margin-top: 8px;
 }
 
 .leaderboard__sticky-head {
     position: sticky;
     top: 0px;
     background-color: white;
+    font-weight: 700;
 }
 
 .leaderboard__table-logo {
@@ -98,5 +99,8 @@
         &.leaderboard__diff {
             width: 70%;
         }
+    }
+    .leaderboard__table-head {
+        padding: 12px 0px;
     }
 }

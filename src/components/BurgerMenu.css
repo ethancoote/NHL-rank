@@ -1,0 +1,39 @@
+.burger-menu {
+    display: flex;
+    aspect-ratio: 1;
+    padding:0px;
+    border-radius: 4px;
+    border: 1px solid hsla(0, 0%, 0%, 0.7);
+
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    svg {
+        overflow: visible;
+        margin: 5px;
+        > * {
+            transition: 0.3s ease-in-out;
+        }
+        
+        &#opened {
+            #line1 {
+                transform: rotateZ(-45deg) translate(-6.5px, -0.5px);
+                
+            }
+            #line2 {
+                stroke: #0000;
+            }
+            #line3 {
+                transform: rotateZ(45deg) translate(2.2px, -2.2px);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .burger-menu {
+        display: none;
+    }
+}

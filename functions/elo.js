@@ -20,7 +20,6 @@ export default function updateElo (gameScore, teamsData) {
         console.log(`home: ${homeTeam} away: ${awayTeam} | Non-NHL teams.`);
         return teamsData;
     }
-    
 
     let newElo = {
         winnerElo: 0,
@@ -47,6 +46,25 @@ export default function updateElo (gameScore, teamsData) {
         return null;
     }
 
+    // add game to array of past games for each team
+    if (!teamsData[homeTeamIndex].pastGames) {
+        teamsData[homeTeamIndex].pastGames = [];
+    }
+    teamsData[homeTeamIndex].pastGames.push({
+        opponent: awayTeam,
+        elo: teamsData[homeTeamIndex].elo,
+        eloChange: (teamsData[homeTeamIndex].elo - teamsData[homeTeamIndex].oldElo)
+    });
+
+    if (!teamsData[awayTeamIndex].pastGames) {
+        teamsData[awayTeamIndex].pastGames = [];
+    }
+    teamsData[awayTeamIndex].pastGames.push({
+        opponent: homeTeam,
+        elo: teamsData[awayTeamIndex].elo,
+        eloChange: (teamsData[awayTeamIndex].elo - teamsData[awayTeamIndex].oldElo)
+    });
+
     console.log(`${teamsData[homeTeamIndex].teamAbbrev}: ${teamsData[homeTeamIndex].elo} vs ${teamsData[awayTeamIndex].teamAbbrev}: ${teamsData[awayTeamIndex].elo}`);
 
     return teamsData
@@ -62,18 +80,18 @@ export function getWinProb (homeElo, awayElo) {
 
 function eloFormula (winnerElo, loserElo, ot) {
 
-    //magic number elo formula
+    // magic number elo formula
     const winnerExpected = 1 / (1 + 10**((loserElo - winnerElo)/400));
     const loserExpected = 1 / (1 + 10**((winnerElo - loserElo)/400));
 
-    // to keep the game 0 sum, you earn 75% of points for an OT win, and 25% for an OT loss.
+    // to keep the game 0 sum, you earn 80% of points for an OT win, and 20% for an OT loss.
     let winnerPoints = 1;
     let loserPoints = 0;
     if (ot) {
-        winnerPoints = 0.75;
-        loserPoints = 0.25;
+        winnerPoints = 0.80;
+        loserPoints = 0.20;
     }
-    const k = 64;
+    const k = 32;
     const winnerNewElo = Math.round(winnerElo + k * (winnerPoints - winnerExpected));
     const loserNewElo = Math.round(loserElo + k * (loserPoints - loserExpected));
 

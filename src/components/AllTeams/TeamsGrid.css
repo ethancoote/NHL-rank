@@ -1,0 +1,38 @@
+.teams-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    width: 100%;
+    gap: 16px;
+}
+
+@media only screen and (max-width: 1350px) {
+    .teams-grid {
+        grid-template-columns: auto auto auto auto auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .teams-grid {
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .teams-grid {
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .teams-grid {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .teams-grid {
+        grid-template-columns: auto auto auto;
+        gap: 8px;
+    }
+}
+

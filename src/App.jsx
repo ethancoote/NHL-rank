@@ -1,42 +1,41 @@
-import './App.css';
-import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import Leaderboard from './components/Leaderboard/Leaderboard.jsx';
-import UpcomingGameList from './components/UpcomingGameList/UpcomingGameList.jsx';
+import TeamHome from './pages/TeamHome.jsx';
+import Home from './pages/Home.jsx';
+import Teams from './pages/Teams.jsx';
+import { Route, Routes} from 'react-router';
+import teamsData from './data/teamsData.json';
+import { eloSort } from './components/Leaderboard/LeaderboardAllTeamsInfo.jsx';
+import './App.css';
 
 function App() {
 
-  const [display, setDisplay] = useState('leaderboard');
+  const teamRoutes = getTeamRoutes();
 
-  function updateDisplay (e) {
-    const buttonId = e.target.id;
-    if (buttonId === "leaderboard-button" && display !== 'leaderboard') {
-      setDisplay('leaderboard');
-    } else if (buttonId === "upcoming-button" && display !== 'upcoming') {
-      setDisplay('upcoming');
-    }
-  }
   return (
     <>
     <div className="app">
       <Header />
-      <section className="section">
-        <div className="mobile-toggle">
-            <button className={display} id="leaderboard-button" onClick={updateDisplay}>Leaderboard</button>
-            <button className={display} id="upcoming-button" onClick={updateDisplay}>Upcoming Games</button>
-        </div>
-        <div className="box homepage-hero">
-          <Leaderboard display={display}/>
-          <UpcomingGameList display={display}/>
-          
-        </div>
-      </section>
-      
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/teams" element={<Teams teamsData={teamsData}/>}/>
+        {teamRoutes}
+      </Routes>
     </div>
+    
     <Footer />
     </>
   );
+}
+
+function getTeamRoutes () {
+  let routeArray = [];
+  const orderedTeamArray = eloSort(teamsData);
+  for (let i = 0; i < orderedTeamArray.length; i++) {
+    const teamPath = `/teams/${orderedTeamArray[i].teamAbbrev}`;
+    routeArray.push(<Route path={teamPath} element={<TeamHome teamData={orderedTeamArray[i]} eloRank={i+1} allTeamsData={teamsData} />}></Route>);
+  }
+  return routeArray;
 }
 
 export default App;
