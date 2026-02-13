@@ -10,11 +10,11 @@
 
     &:hover {
         box-shadow: var(--box-shadow);
-        border-color: hsla(0, 0%, 0%, 0.5);
+        border-color: hsla(0, 0%, 0%, 0.7);
         cursor: pointer;
     }
 
     img {
-        width: 128px;
+        width: 100%;
     }
 }

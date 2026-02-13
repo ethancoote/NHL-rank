@@ -5,6 +5,7 @@
 }
 
 .teams__text-md {
+    text-align: center;
     font-size: 20px;
     align-self: center;
     margin-bottom: 8px;
