@@ -36,12 +36,12 @@ Next we have some variables:
 ```
 winPoints = 1
 losePoints = 0
-k = 64 
+k = 32 
 ```
 
 The winPoints and losePoints variables act as percentages. In this case, the winner earns 100% of available points, and the loser earns 0% of available points.
 
-The k value determines the maximum points that a team can earn from a single win. A k value of 64 makes large swings in rating more likely. A value of 64 is used due to the relatively small sample size of a single NHL season.
+The 'k' value determines the maximum points that a team can earn from a single win. A 'k' value of 32 will allow teams to gain/lose points at a moderately fast rate. A value of 32 is used due to the relatively small sample size of a single NHL season.
 
 If the home team were to win, the final algorithm would look like this:
 
@@ -55,11 +55,11 @@ awayNewElo = homeElo + k * (losePoints - awayWinProbability)
 If teams reach overtime variables become:
 
 ```
-winPoints = 0.75
-losePoints = 0.25
+winPoints = 0.8
+losePoints = 0.2
 ```
 
-Therefore, an overtime win is worth less points than a regulation win. This is necessary to prevent rating inflation.
+A team earns 80% of points for an overtime win, and 20% of points for an overtime loss. Therefore, an overtime win is worth less points than a regulation win. This is necessary to prevent rating inflation.
 
 The NHL point system awards more points when teams reach overtime, creating a bias towards teams that reach overtime more often. The elo system removes this bias.
 
