@@ -26,14 +26,15 @@
     justify-content: start;
     padding-top: 128px;
     top: 0;
-    left:0;
+    right:0;
     width: 100vw;
     height: 100vh;
     gap: 24px;
     background-color: white;
     opacity: 0;
     transition: 0.3s ease-in-out;
-    pointer-events: none;   
+    pointer-events: none;
+    z-index: 9;
 
     &.opened {
         opacity: 100%;
