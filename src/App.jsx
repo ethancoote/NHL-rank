@@ -3,7 +3,7 @@ import Footer from './components/Footer.jsx';
 import TeamHome from './pages/TeamHome.jsx';
 import Home from './pages/Home.jsx';
 import Teams from './pages/Teams.jsx';
-import { Route, Routes} from 'react-router';
+import { Route, Routes } from 'react-router';
 import teamsData from './data/teamsData.json';
 import { eloSort } from './components/Leaderboard/LeaderboardAllTeamsInfo.jsx';
 import './App.css';
