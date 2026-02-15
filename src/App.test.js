@@ -2,8 +2,6 @@ import { render, screen } from '@testing-library/react';
 import teamsData from './data/teamsData.json';
 import App from './App';
 import Leaderboard from './components/Leaderboard/Leaderboard';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import { HashRouter } from 'react-router';
 
 test('Leaderboard Exists', () => {
@@ -19,7 +17,7 @@ test('Upcoming Games Exists', () => {
 });
 
 test('All Teams Ranked', () => {
-  render(<HashRouter><App /></HashRouter>);
+  render(<HashRouter><Leaderboard/></HashRouter>);
   for (let i = 0; i < teamsData.length; i++) {
     const teamName = screen.getByText(teamsData[i].teamAbbrev);
     expect(teamName).toBeInTheDocument();
