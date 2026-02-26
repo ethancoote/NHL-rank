@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.1d398d32.css",
-    "main.js": "./static/js/main.d3d37452.js",
+    "main.js": "./static/js/main.5b26144e.js",
     "static/media/nhl-logo.webp": "./static/media/nhl-logo.907d18da2ed0213bf766.webp",
     "static/media/github-logo.svg": "./static/media/github-logo.255db585f8a0eb28a1e4deb91bde207d.svg",
     "index.html": "./index.html",
     "main.1d398d32.css.map": "./static/css/main.1d398d32.css.map",
-    "main.d3d37452.js.map": "./static/js/main.d3d37452.js.map"
+    "main.5b26144e.js.map": "./static/js/main.5b26144e.js.map"
   },
   "entrypoints": [
     "static/css/main.1d398d32.css",
-    "static/js/main.d3d37452.js"
+    "static/js/main.5b26144e.js"
   ]
 }
