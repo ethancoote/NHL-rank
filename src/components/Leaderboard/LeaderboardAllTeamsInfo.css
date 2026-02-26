@@ -8,10 +8,14 @@
     border-bottom: 1px solid hsla(0, 0%, 0% ,0.3);
     padding-bottom: 8px;
     margin-top: 8px;
+    height: fit-content;
 }
 
 .leaderboard__sticky-head {
     position: sticky;
+    display: flex;
+    width: 100%;
+    height: fit-content;
     top: 0px;
     background-color: white;
     font-weight: 700;
