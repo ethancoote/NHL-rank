@@ -40,7 +40,7 @@
 .leaderboard__table-box {
     display: flex;
     width: 90px;
-    height: stretch;
+    height: fit-content;
     text-align:start;
     align-items: center;
     justify-content: center;
