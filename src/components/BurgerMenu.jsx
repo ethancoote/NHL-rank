@@ -11,7 +11,7 @@ export default function BurgerMenu ({openCloseClass, setOpenCloseClass}) {
     }
 
     return (
-        <button className="burger-menu" onClick={openClose}>
+        <button className="burger-menu" onClick={openClose} aria-label="Menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 12" fill="none" id={openCloseClass}>
                 <line x1="1" y1="11" x2="15" y2="11" stroke="black" strokeWidth="2" strokeLinecap="round" id="line1"/>
                 <line x1="1" y1="6" x2="15" y2="6" stroke="black" strokeWidth="2" strokeLinecap="round" id="line2"/>
