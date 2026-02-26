@@ -87,7 +87,17 @@ export async function getTodaysGames() {
         }
 
         const schedule = await response.json();
-        const todaysGames = schedule.gameWeek[0]?.games;
+        let todaysGames = schedule.gameWeek[0]?.games;
+
+        // check if api has updated the day yet
+        const yesterdaysGameIds = JSON.parse(readFileSync(path.join(dirname, '../src/data/dayGames.json')));
+        if (yesterdaysGameIds.length > 0 && todaysGames.length > 0) {
+            if (todaysGames[0].id === yesterdaysGameIds[0]) {
+                todaysGames = schedule.gameWeek[1]?.games;
+            }
+        }
+
+        console.log(todaysGames);
         if (!todaysGames) {
             writeFileSync(path.join(dirname, "../src/data/todaysGames.json"), JSON.stringify([]));
             return [];
