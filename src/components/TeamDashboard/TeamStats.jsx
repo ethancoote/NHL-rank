@@ -5,7 +5,14 @@ import './TeamStats.css';
 export default function TeamStats ({teamData}) {
 
     const winPercent = Math.round((teamData.wins / teamData.gamesPlayed)*1000) /10;
-    const nextGame = teamData.nextGame;
+    let hasNextGame = true;
+    let nextGame = null;
+
+    if (!teamData?.nextGame) {
+        hasNextGame = false;
+    } else {
+        nextGame = teamData.nextGame
+    }
 
     return (
         <div className="team-stats">
@@ -24,25 +31,25 @@ export default function TeamStats ({teamData}) {
                     <StatsBox head="Win Percent" body={`${winPercent}%`} bg="tint"/>
                 </div>
             </div>
-            
-            <div className="team-stats__col g-8">
-                <div className='team-stats__row apart p-x-4'>
-                    <p className="team-stats__text-md bold">Next Game</p>
-                    <p className="team-stats__text-sm">{nextGame.gameDate}</p>
+            {hasNextGame && 
+                <div className="team-stats__col g-8">
+                    <div className='team-stats__row apart p-x-4'>
+                        <p className="team-stats__text-md bold">Next Game</p>
+                        <p className="team-stats__text-sm">{nextGame.gameDate}</p>
+                    </div>
+                    <Game 
+                        homeLogo={nextGame.homeLogo}
+                        awayLogo={nextGame.awayLogo}
+                        timeUTC={nextGame.timeUTC}
+                        homeElo={nextGame.homeElo}
+                        awayElo={nextGame.awayElo}
+                        homeWinProb={nextGame.homeWinProb}
+                        awayWinProb={nextGame.awayWinProb}
+                        bgWhite={false}
+                        border={false}
+                    />
                 </div>
-                <Game 
-                    homeLogo={nextGame.homeLogo}
-                    awayLogo={nextGame.awayLogo}
-                    timeUTC={nextGame.timeUTC}
-                    homeElo={nextGame.homeElo}
-                    awayElo={nextGame.awayElo}
-                    homeWinProb={nextGame.homeWinProb}
-                    awayWinProb={nextGame.awayWinProb}
-                    bgWhite={false}
-                    border={false}
-                />
-            </div>
-            
+            }
         </div>
     );
 }
