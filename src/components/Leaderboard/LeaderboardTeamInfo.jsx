@@ -4,12 +4,12 @@ import './LeaderboardTeamInfo.css';
 export default function LeaderboardTeamInfo (props) {
     const {rank, logo, team, elo, gamesPlayed, division, wins, losses, otLosses, oldElo} = props;
     const diff = elo - oldElo;
-    let diffString = "+0";
+    let diffString = "-";
     let colorClass = "green";
-    if (diff >= 0) {
+    if (diff > 0) {
         diffString = `+${diff}`;
         colorClass = "green";
-    } else {
+    } else if (diff < 0) {
         diffString = `${diff}`;
         colorClass = "red";
     }
