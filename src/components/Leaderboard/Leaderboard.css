@@ -10,6 +10,10 @@
     gap: 16px;
 }
 
+.leaderboard__p-text {
+    text-wrap: balance;
+}
+
 @media only screen and (max-width: 600px) {
     .leaderboard {
         padding: 32px 16px;

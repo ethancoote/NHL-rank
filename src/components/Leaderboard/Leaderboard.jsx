@@ -9,8 +9,7 @@ export default function Leaderboard ({display}) {
     return (
         <div className={displayClass}>
             <h1>Leaderboard</h1>
-            <p>The NHL 2026-2027 preseason is underway. Some stats may be left from the previous season.</p>
-            <p>All stats will reset when the regular season begins.</p>
+            <p className="leaderboard__p-text">This is the <b>unofficial leaderboard</b> for the 2026-2027 NHL season. ELO rankings are updated at <b>10:00 AM UTC</b> every day.</p>
             <LeaderboardAllTeamsInfo/>
         </div>
     );

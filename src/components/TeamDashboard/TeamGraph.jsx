@@ -32,10 +32,8 @@ export default function TeamGraph ({teamData, allTeamsData}) {
 
     const allDatasets = [];
     let len = allTeamsData.length;
-    console.log(len)
 
     for (let i = 0; i < len; i++) {
-        console.log(i);
         if (!allTeamsData[i].pastGames) {
             continue;
         }

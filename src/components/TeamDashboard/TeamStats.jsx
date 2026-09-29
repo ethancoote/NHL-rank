@@ -4,7 +4,10 @@ import './TeamStats.css';
 
 export default function TeamStats ({teamData}) {
 
-    const winPercent = Math.round((teamData.wins / teamData.gamesPlayed)*1000) /10;
+    let winPercent = Math.round((teamData.wins / teamData.gamesPlayed)*1000) /10;
+    if (!winPercent) {
+        winPercent = "50.00";
+    }
     let hasNextGame = true;
     let nextGame = null;
 

@@ -6,6 +6,15 @@ import path from 'path';
 
 const dirname = import.meta.dirname;
 
+/*TO RESET
+- remove teamsData.json
+- run these 2 lines below
+- run cron.js
+*/
+
+/*await initData();
+initTeamsDataJSON("standings.json");*/
+
 export async function initData () {
     try {
         const response = await fetch("https://api-web.nhle.com/v1/standings/now");
